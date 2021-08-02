@@ -4,6 +4,7 @@ var todate;
 var mindate;
 var maxdate;
 var rain_class1, rain_class2, rain_class3, rain_class4, rain_class5, maxrainfall;
+var rain1, rain2, rain3, rain4, rain5, tempmax1, tempmax2, tempmax3, tempmax4, tempmin1, tempmin2, tempmin3, tempmin4;
 
 
 
@@ -17,18 +18,77 @@ $.ajax({
     'url': "http://gis.mahapocra.gov.in/weatherservices/meta/getforecastdate",
     // 'data': { 'request': "", 'target': 'arrange_url', 'method': 'method_target' },
     'success': function(data) {
-        console.log(data)
+        // console.log(data)
         todate = data.forecast[0].today;
         mindate = data.forecast[0].mindate;
         maxdate = data.forecast[0].maxdate;
-        rain_class1 = data.forecast[0].rain_class1;
-        rain_class2 = data.forecast[0].rain_class2;
-        rain_class3 = data.forecast[0].rain_class3;
-        rain_class4 = data.forecast[0].rain_class4;
-        rain_class5 = data.forecast[0].rain_class5;
+        rain1 = data.forecast[0].rain_class1;
+        rain2 = data.forecast[0].rain_class2;
+        rain3 = data.forecast[0].rain_class3;
+        rain4 = data.forecast[0].rain_class4;
+        rain5 = data.forecast[0].rain_class5;
         maxrainfall = data.forecast[0].maxrainfall;
+        tempmax1 = data.forecast[0].temp_max1;
+        tempmax2 = data.forecast[0].temp_max2;
+        tempmax3 = data.forecast[0].temp_max3;
+        tempmax4 = data.forecast[0].temp_max4;
+        tempmin1 = data.forecast[0].temp_min1;
+        tempmin2 = data.forecast[0].temp_min2;
+        tempmin3 = data.forecast[0].temp_min3;
+        tempmin4 = data.forecast[0].temp_min4;
     }
 });
+
+document.getElementById("forecasttable").innerHTML = '<table id="example" class="table table-striped table-bordered" >\n\
+            <thead>\n\
+			</tr>\n\
+	<tr > <th  style="text-align: left;font-size: 14px;">Sr. No.</th>\n\
+	<th  style="text-align: left;font-size: 14px;" >District</th>\n\
+	 <th  style="text-align: left;font-size: 14px;" >Taluka</th>\n\
+	<th  style="text-align: left;font-size: 14px;" >Forecast Date </th>\n\
+	<th  style="text-align: left;font-size: 14px;" >Rainfall (mm) </th>\n\
+    <th  style="text-align: left;font-size: 14px;" >Minimun Temprature (&#176;C) </th>\n\
+    <th  style="text-align: left;font-size: 14px;" >Maximum Temprature (&#176;C) </th>\n\
+    <th  style="text-align: left;font-size: 14px;" >Humidity 1 (%)</th>\n\
+    <th  style="text-align: left;font-size: 14px;" >Humidity 2 (%)</th>\n\
+    <th  style="text-align: left;font-size: 14px;" >Wind Speed (m/s)</th>\n\
+    <th  style="text-align: left;font-size: 14px;" >Wind Direction </th>\n\
+    <th  style="text-align: left;font-size: 14px;" >Cloud Cover</th>\n\
+    </tr>\n\
+                </thead>\n\
+                <tbody>'
+    // datatable
+var table = $('#example').DataTable({
+    fixedHeader: true
+});
+$.ajax({
+    url: "http://gis.mahapocra.gov.in/dashboard_testing_api_2020_12_22/meta/todaysforecast",
+    success: function(result) {
+        for (var i = 0; i < result.forecast.length; i++) {
+            table.row.add([
+                i + 1,
+                result.forecast[i].dtnname,
+                result.forecast[i].thnname,
+                result.forecast[i].forecast_date,
+                result.forecast[i].rainfall_mm,
+                result.forecast[i].temp_min_deg_c,
+                result.forecast[i].temp_max_deg_c,
+                result.forecast[i].humidity_1,
+                result.forecast[i].humidity_2,
+                result.forecast[i].wind_speed_ms,
+                result.forecast[i].wind_direction_deg,
+                result.forecast[i].cloud_cover_octa
+            ]).draw(false);
+        }
+
+    }
+});
+'</tbody>'
+'</table>'
+
+
+
+
 
 var topo = new ol.layer.Tile({
     title: 'Topo Map',
@@ -50,22 +110,12 @@ var MahaDist = new ol.layer.Tile({
         serverType: 'geoserver',
         visible: true,
         params: {
-            'LAYERS': 'PoCRA:MahaDist',
+            'LAYERS': 'PoCRA_Dashboard:District',
             'TILED': true,
         }
     })
 });
-var layers = new ol.layer.Tile({
-    title: "State",
-    source: new ol.source.TileWMS({
-        attributions: ['Iowa State University'],
-        crossOrigin: 'Anonymous',
-        serverType: 'geoserver',
-        visible: true,
-        url: 'https://mesonet.agron.iastate.edu/cgi-bin/wms/nexrad/n0r-t.cgi',
-        params: { 'LAYERS': 'nexrad-n0r-wmst' },
-    })
-});
+
 
 
 var container = document.getElementById('popup');
@@ -142,6 +192,7 @@ var mouse = new ol.control.MousePosition({
         return ol.coordinate.format(coordinate, latLong, 4);
     }
 });
+
 // var extent = ol.proj.transform([-126, 24, -66, 50], 'EPSG:4326', 'EPSG:3857');
 var map = new ol.Map({
     view: view,
@@ -155,8 +206,28 @@ var map = new ol.Map({
     target: 'map'
 })
 var dates = [];
+
 loadMap1();
 // getseries();
+// Define a new legend
+
+//legend.on('select', function(e){ console.log(e) });
+
+// // Add a new one
+// var legend2 = new ol.legend.Legend({
+//     title: '', // no title
+//     margin: 5
+// });
+// map.addControl(new ol.control.Legend({
+//     legend: legend2,
+//     target: legendCtrl.element
+// }));
+
+
+
+//legend.on('select', function(e){ console.log(e) });
+
+
 
 
 function getseries() {
@@ -212,10 +283,216 @@ function loadMap1() {
     map.addLayer(geojson);
 }
 var imdlayer;
+var label;
+var legend, legendCtrl;
 
 function loadMap(forecastdate) {
+    var elevalue = document.getElementById("mapselect").value;
+    var propname = "";
+    // alert(elevalue)
+    if (legend) {
+        map.removeControl(legend);
+    }
+    if (legendCtrl) {
+        map.removeControl(legendCtrl);
+    }
+    if (elevalue === "rainfall") {
+        propname = "rainfall_mm";
+        label = "Rainfall";
+        // document.getElementById("legendTitle").innerHTML = label + '(mm)';
+        rain_class1 = rain1;
+        rain_class2 = rain2;
+        rain_class3 = rain3;
+        rain_class4 = rain4;
+        rain_class5 = rain5;
+        updateInfo();
+        legend = new ol.legend.Legend({
+            title: label,
+            // style: getFeatureStyle
+        })
+        legendCtrl = new ol.control.Legend({
+            legend: legend,
+            collapsed: false
+        });
+        map.addControl(legendCtrl);
+        legend.addItem({
+            title: (parseInt(rain_class1)) + " - " + (parseInt(rain_class2)),
+            typeGeom: 'Point',
+            style: new ol.style.Style({
+                image: new ol.style.Icon({
+                    size: [35, 35],
+                    src: "./legend/forcast1.jpg"
+                })
+            })
+        });
+        legend.addItem({
+            title: (parseInt(rain_class2) + 0.1) + " - " + (parseInt(rain_class3)),
+            typeGeom: 'Point',
+            style: new ol.style.Style({
+                image: new ol.style.Icon({
+                    size: [35, 35],
+                    src: "./legend/forcast2.jpg"
+                })
+            })
+        });
+        legend.addItem({
+            title: (parseInt(rain_class3) + 0.1) + " - " + (parseInt(rain_class4)),
+            typeGeom: 'Point',
+            style: new ol.style.Style({
+                image: new ol.style.Icon({
+                    size: [35, 35],
+                    src: "./legend/forcast3.jpg"
+                })
+            })
+        });
+        legend.addItem({
+            title: (parseInt(rain_class4) + 0.1) + " and above ",
+            typeGeom: 'Point',
+            style: new ol.style.Style({
+                image: new ol.style.Icon({
+                    size: [35, 35],
+                    src: "./legend/forcast4.jpg"
+                })
+            })
+        });
+    } else if (elevalue === "mintemprature") {
+        if (legend) {
+            map.removeControl(legend);
+        }
+        if (legendCtrl) {
+            map.removeControl(legendCtrl);
+        }
+        propname = "temp_min_deg_c";
+        label = "Minimum Temprature";
+        // document.getElementById("legendTitle").innerHTML = label + '(&#176;C)';
+        // rain_class1 = tempmin1;
+        rain_class2 = tempmin1;
+        rain_class3 = tempmin2;
+        rain_class4 = tempmin3;
+        rain_class5 = tempmin4;
+        updateInfo();
+        legend = new ol.legend.Legend({
+            title: label,
+            // style: getFeatureStyle
+        })
+        legendCtrl = new ol.control.Legend({
+            legend: legend,
+            collapsed: false
+        });
+
+        map.addControl(legendCtrl);
+        legend.addItem({
+            title: (parseInt(rain_class1)) + " - " + (parseInt(rain_class2)),
+            typeGeom: 'Point',
+            style: new ol.style.Style({
+                image: new ol.style.Icon({
+                    size: [35, 35],
+                    src: "./legend/forcast1.jpg"
+                })
+            })
+        });
+        legend.addItem({
+            title: (parseInt(rain_class3) + 0.1) + " - " + (parseInt(rain_class2)),
+            typeGeom: 'Point',
+            style: new ol.style.Style({
+                image: new ol.style.Icon({
+                    size: [35, 35],
+                    src: "./legend/forcast2.jpg"
+                })
+            })
+        });
+        legend.addItem({
+            title: (parseInt(rain_class3) + 0.1) + " - " + (parseInt(rain_class4)),
+            typeGeom: 'Point',
+            style: new ol.style.Style({
+                image: new ol.style.Icon({
+                    size: [35, 35],
+                    src: "./legend/forcast3.jpg"
+                })
+            })
+        });
+        legend.addItem({
+            title: (parseInt(rain_class4) + 0.1) + " and above ",
+            typeGeom: 'Point',
+            style: new ol.style.Style({
+                image: new ol.style.Icon({
+                    size: [35, 35],
+                    src: "./legend/forcast4.jpg"
+                })
+            })
+        });
+    } else if (elevalue === "maxtemprature") {
+
+        if (legend) {
+            map.removeControl(legend);
+        }
+        if (legendCtrl) {
+            map.removeControl(legendCtrl);
+        }
+        propname = "temp_max_deg_c";
+        label = "Maximum Temprature";
+        // document.getElementById("legendTitle").innerHTML = label + '(&#176;C)';
+        rain_class2 = tempmax1;
+        rain_class3 = tempmax2;
+        rain_class4 = tempmax3;
+        rain_class5 = tempmax4;
+        updateInfo();
+        legend = new ol.legend.Legend({
+            title: label,
+            // style: getFeatureStyle
+        })
+        legendCtrl = new ol.control.Legend({
+            legend: legend,
+            collapsed: false
+        });
+        map.addControl(legendCtrl);
+        legend.addItem({
+            title: (parseInt(rain_class1)) + " - " + (parseInt(rain_class2)),
+            typeGeom: 'Point',
+            style: new ol.style.Style({
+                image: new ol.style.Icon({
+                    size: [35, 35],
+                    src: "./legend/forcast1.jpg"
+                })
+            })
+        });
+        legend.addItem({
+            title: (parseInt(rain_class2) + 0.1) + " - " + (parseInt(rain_class3)),
+            typeGeom: 'Point',
+            style: new ol.style.Style({
+                image: new ol.style.Icon({
+                    size: [35, 35],
+                    src: "./legend/forcast2.jpg"
+                })
+            })
+        });
+        legend.addItem({
+            title: (parseInt(rain_class3) + 0.1) + " - " + (parseInt(rain_class4)),
+            typeGeom: 'Point',
+            style: new ol.style.Style({
+                image: new ol.style.Icon({
+                    size: [35, 35],
+                    src: "./legend/forcast3.jpg"
+                })
+            })
+        });
+        legend.addItem({
+            title: (parseInt(rain_class4) + 0.1) + " and above ",
+            typeGeom: 'Point',
+            style: new ol.style.Style({
+                image: new ol.style.Icon({
+                    size: [35, 35],
+                    src: "./legend/forcast4.jpg"
+                })
+            })
+        });
+    }
+
     if (imdlayer) {
         map.removeLayer(imdlayer);
+    }
+    if (MahaDist) {
+        map.removeLayer(MahaDist);
     }
     var indate = "forecast_date IN('" + forecastdate + "')";
     imdlayer = new ol.layer.Tile({
@@ -227,113 +504,22 @@ function loadMap(forecastdate) {
             visible: true,
             url: "http://gis.mahapocra.gov.in/geoserver/PoCRA_Dashboard/wms?",
             params: {
-                'LAYERS': 'PoCRA:Forecast',
+                'LAYERS': 'PoCRA:ForecastView',
                 'TILED': true,
-                'env': "rain1:" + (parseInt(rain_class2)) + ";rain2:" + (parseInt(rain_class2) + 0.1) + ";rain3:" + (parseInt(rain_class3)) + ";rain4:" + (parseInt(rain_class3) + 0.1) + ";rain5:" + (parseInt(rain_class4)) + ";rain6:" + (parseInt(rain_class4) + 0.1),
+                'env': "propname:" + propname + ";rain1:" + (parseInt(rain_class2)) + ";rain2:" + (parseInt(rain_class2) + 0.1) + ";rain3:" + (parseInt(rain_class3)) + ";rain4:" + (parseInt(rain_class3) + 0.1) + ";rain5:" + (parseInt(rain_class4)) + ";rain6:" + (parseInt(rain_class4) + 0.1),
                 'CQL_FILTER': indate
             },
         })
     });
+
     map.addLayer(imdlayer);
+    map.addLayer(MahaDist);
+    console.log(imdlayer.getSource());
+
 }
+// console.log("propname:" + propname + ";rain1:" + (parseInt(rain_class2)) + ";rain2:" + (parseInt(rain_class2) + 0.1) + ";rain3:" + (parseInt(rain_class3)) + ";rain4:" + (parseInt(rain_class3) + 0.1) + ";rain5:" + (parseInt(rain_class4)) + ";rain6:" + (parseInt(rain_class4) + 0.1))
 
-loadMap(mindate);
-var subdivisionStyle = [subdivisionBoundaryStyle, subdivisionLabelStyle];
-var forcastcolor = [
-    [0, 2, '#ffd380'],
-    [2.1, 4, '#ffaa01'],
-    [4.1, 6, '#98e500'],
-    [6.1, 10, '#1c6b00']
-];
-
-
-// // Create Timeline control 
-// var tline = new ol.control.Timeline({
-//     className: 'ol-pointer',
-//     features: [{
-//         date: new Date(mindate),
-//         endDate: new Date(maxdate)
-//     }],
-//     graduation: 'day', // 'month'
-//     minDate: new Date(mindate),
-//     maxDate: new Date(maxdate),
-//     getHTML: function(f) {},
-//     getFeatureDate: function(f) { return f.date; },
-//     endFeatureDate: function(f) { return f.endDate }
-// });
-// map.addControl(tline);
-// // Set the date when ready
-// // var d = new Date(todate);
-// setTimeout(function() { tline.setDate(mindate); });
-// tline.addButton({
-//     className: "go",
-//     title: "GO!",
-//     handleClick: function() {
-//         go();
-//     }
-// });
-
-// // Run on the timeline
-// var running = false;
-// var start = new Date(mindate);
-// var end = new Date(maxdate);
-
-// function go(next) {
-
-//     var date = tline.getDate();
-//     month = '' + (date.getMonth() + 1);
-//     day = '' + date.getDate();
-//     year = date.getFullYear();
-
-//     if (month.length < 2)
-//         month = '0' + month;
-//     if (day.length < 2)
-//         day = '0' + day;
-
-
-//     var inputdate = [year, month, day].join('-');
-//     document.getElementById("select").innerHTML = inputdate;
-//     console.log(inputdate);
-//     loadMap(inputdate);
-
-//     // console.log(date.getFullYear() + "-" + date.getMonth() + "-" + date.getDay())
-//     // imdlayer.getSource().updateParams({
-//     //     'forecast_date': inputdate
-//     // });
-//     if (running) clearTimeout(running);
-//     if (!next) {
-//         // stopconsole.log(date)
-//         // if (date >= start && date <= end && running) {
-//         //     // console.log(">" + date)
-//         //     running = false;
-//         //     tline.element.classList.remove('running');
-//         //     return;
-//         // }
-//         if (date > end) {
-
-//             date = start;
-//         }
-//     }
-//     if (date > end) {
-
-//         tline.element.classList.remove('running');
-//         return;
-//     }
-//     // if (date < start) {
-
-//     //     date = start;
-//     // }
-//     // 1 day
-//     // console.log(date.getTime())
-
-//     date = new Date(date.getTime() + 24 * 60 * 60 * 1000);
-//     tline.setDate(date, { anim: false });
-//     // next
-//     tline.element.classList.add('running');
-
-//     running = setTimeout(function() { go(true); }, 2000);
-// }
-
+// loadMap(mindate);
 
 var frameRate = 0.5; // frames per second
 var animationId = null;
@@ -342,6 +528,7 @@ var startDate = new Date(todate);
 var endDate = new Date(maxdate);
 var sdate = mindate;
 var disdate;
+
 
 function updateInfo() {
 
@@ -357,6 +544,7 @@ function updateInfo() {
 
     fromdate = [day, month, year].join('-');
 
+
     var ed = new Date(maxdate),
         emonth = '' + (ed.getMonth() + 1),
         eday = '' + ed.getDate(),
@@ -367,13 +555,29 @@ function updateInfo() {
     if (eday.length < 2)
         eday = '0' + eday;
     todaydate = [eday, emonth, eyear].join('-');
-    document.getElementById("today").innerHTML = "( " + fromdate + " to " + todaydate + " )";
+
+    var md = new Date(mindate),
+        mmonth = '' + (md.getMonth() + 1),
+        mday = '' + md.getDate(),
+        myear = md.getFullYear();
+
+    if (mmonth.length < 2)
+        mmonth = '0' + mmonth;
+    if (mday.length < 2)
+        mday = '0' + mday;
+    mdate = [mday, mmonth, myear].join('-');
+    // console.log(fromdate)
+    // console.log(mdate)
+    document.getElementById("today").innerHTML = "( " + fromdate + " - " + todaydate + " )";
     var el = document.getElementById('info');
-    el.innerHTML = disdate;
-    document.getElementById('rainclass1').innerHTML = (parseInt(rain_class1)) + " to " + (parseInt(rain_class2));
-    document.getElementById('rainclass2').innerHTML = (parseInt(rain_class2) + 0.1) + " to " + (parseInt(rain_class3));
-    document.getElementById('rainclass3').innerHTML = (parseInt(rain_class3) + 0.1) + " to " + (parseInt(rain_class4));
-    document.getElementById('rainclass4').innerHTML = (parseInt(rain_class4) + 0.1) + " and above ";
+
+
+    el.innerHTML = "Forecast  on Date: " + disdate;
+
+    // document.getElementById('rainclass1').innerHTML = (parseInt(rain_class1)) + " to " + (parseInt(rain_class2));
+    // document.getElementById('rainclass2').innerHTML = (parseInt(rain_class2) + 0.1) + " to " + (parseInt(rain_class3));
+    // document.getElementById('rainclass3').innerHTML = (parseInt(rain_class3) + 0.1) + " to " + (parseInt(rain_class4));
+    // document.getElementById('rainclass4').innerHTML = (parseInt(rain_class4) + 0.1) + " and above ";
 }
 
 function setTime() {
@@ -432,7 +636,7 @@ function setTime() {
     //     stop();
     // }
     // layers[1].getSource().updateParams({ 'TIME': startDate.toISOString() });
-    updateInfo();
+    // updateInfo();
 }
 setTime();
 
@@ -443,10 +647,145 @@ var stop = function() {
     }
 };
 
+function nextTime() {
+    startDate = new Date(startDate.getTime() + 24 * 60 * 60 * 1000);
+
+    var d = new Date(startDate),
+        month = '' + (d.getMonth() + 1),
+        day = '' + d.getDate(),
+        year = d.getFullYear();
+
+    if (month.length < 2)
+        month = '0' + month;
+    if (day.length < 2)
+        day = '0' + day;
+
+    sdate = [year, month, day].join('-');
+
+    var ed = new Date(endDate),
+        emonth = '' + (ed.getMonth() + 1),
+        eday = '' + ed.getDate(),
+        eyear = ed.getFullYear();
+
+    if (emonth.length < 2)
+        emonth = '0' + emonth;
+    if (eday.length < 2)
+        eday = '0' + eday;
+    edate = [eyear, emonth, eday].join('-');
+
+    var dd = new Date(sdate),
+        dmonth = '' + (dd.getMonth() + 1),
+        dday = '' + dd.getDate(),
+        dyear = dd.getFullYear();
+
+    if (dmonth.length < 2)
+        dmonth = '0' + dmonth;
+    if (dday.length < 2)
+        dday = '0' + dday;
+    disdate = [dday, dmonth, dyear].join('-');
+
+    loadMap(sdate)
+
+
+    if (sdate == edate) {
+
+        startDate = new Date(todate);
+        console.log("stop loop")
+        stop();
+
+    }
+
+    stop();
+}
+
+function prevTime() {
+    startDate = new Date(startDate.getTime() - 24 * 60 * 60 * 1000);
+
+    var d = new Date(startDate),
+        month = '' + (d.getMonth() + 1),
+        day = '' + d.getDate(),
+        year = d.getFullYear();
+
+    if (month.length < 2)
+        month = '0' + month;
+    if (day.length < 2)
+        day = '0' + day;
+
+    sdate = [year, month, day].join('-');
+
+    var ed = new Date(endDate),
+        emonth = '' + (ed.getMonth() + 1),
+        eday = '' + ed.getDate(),
+        eyear = ed.getFullYear();
+
+    if (emonth.length < 2)
+        emonth = '0' + emonth;
+    if (eday.length < 2)
+        eday = '0' + eday;
+    edate = [eyear, emonth, eday].join('-');
+
+    var dd = new Date(sdate),
+        dmonth = '' + (dd.getMonth() + 1),
+        dday = '' + dd.getDate(),
+        dyear = dd.getFullYear();
+
+    if (dmonth.length < 2)
+        dmonth = '0' + dmonth;
+    if (dday.length < 2)
+        dday = '0' + dday;
+    disdate = [dday, dmonth, dyear].join('-');
+    var md = new Date(mindate),
+        mmonth = '' + (md.getMonth() + 1),
+        mday = '' + md.getDate(),
+        myear = md.getFullYear();
+
+    if (mmonth.length < 2)
+        mmonth = '0' + mmonth;
+    if (mday.length < 2)
+        mday = '0' + mday;
+    mdate = [mday, mmonth, myear].join('-');
+    console.log("startDate" + startDate)
+    console.log("md" + md)
+        // loadMap(sdate)
+
+
+
+    // startDate.setMinutes(startDate.getTime() + 24 * 60 * 60 * 1000);
+
+    if (startDate < md) {
+        startDate = new Date(startDate.getTime() + 24 * 60 * 60 * 1000);
+        stop();
+    } else if (sdate == edate) {
+
+        startDate = new Date(todate);
+        console.log("stop loop")
+        stop();
+    } else {
+        loadMap(sdate)
+        updateInfo();
+        stop();
+    }
+
+    stop();
+}
+
 var play = function() {
     stop();
-    animationId = window.setInterval(setTime, 5000 );
+    animationId = window.setInterval(setTime, 5000);
 };
+
+var i = 1;
+
+var prev = function() {
+    stop();
+    animationId = window.setInterval(prevTime, 1000);
+};
+
+var next = function() {
+    stop();
+    animationId = window.setInterval(nextTime, 1000);
+};
+
 
 var startButton = document.getElementById('play');
 startButton.addEventListener('click', play, false);
@@ -454,14 +793,21 @@ startButton.addEventListener('click', play, false);
 var stopButton = document.getElementById('pause');
 stopButton.addEventListener('click', stop, false);
 
-updateInfo();
+var prevButton = document.getElementById('prev');
+prevButton.addEventListener('click', prev, false);
+
+var nextButton = document.getElementById('next');
+nextButton.addEventListener('click', next, false);
+
+// updateInfo();
 
 map.on('singleclick', function(evt) {
-
+    overlay.setPosition(undefined);
+    closer.blur();
     var coordinate = evt.coordinate;
     var viewResolution = /** @type {number} */ (view.getResolution());
     map.forEachLayerAtPixel(evt.pixel, function(feature, layer) {
-        console.log(layer);
+        // console.log(layer);
         // if (layer.get('title') === "IMD Forecast") {
         //     console.log(feature.getKeys())
         // }
@@ -482,14 +828,16 @@ map.on('singleclick', function(evt) {
                 var jsondata = JSON.parse(html);
                 if (jsondata.features[0].properties) {
                     content.innerHTML = "";
-                    content.innerHTML = '<table class="table table-bordered" style="border:1px solid black;width: 95%;color:black"><tr ><td style="background-color:skyblue" colspan=2 style="text-align:center">IMD Weather Forecast Attribute Information</td></tr><tr><td style="text-align: right">District </td><td style="text-align: left">' + jsondata.features[0].properties.dtnname + '</td></tr><tr><td style="text-align: right">Taluka </td><td style="text-align: left">' + jsondata.features[0].properties.thnname + '</td></tr><tr><td style="text-align: right">Forecast Date </td><td style="text-align: left">' + jsondata.features[0].properties.forecast_date + '</td></tr><tr><td style="text-align: right">Rainfall (mm) </td><td style="text-align: left">' + parseFloat(jsondata.features[0].properties.rainfall_mm) + '</td></tr><tr><td style="text-align: right">Maximum Temprature &#8451; </td><td style="text-align: left ">' + parseFloat(jsondata.features[0].properties.temp_max_deg_c) + '</td></tr><tr><td style="text-align: right">Minimum Temprature &#8451; </td><td style="text-align: left">' + parseFloat(jsondata.features[0].properties.temp_min_deg_c) + '</td></tr><tr><td style="text-align: right">Wind Speed(m/s) </td><td style="text-align: left">' + parseFloat(jsondata.features[0].properties.wind_speed_ms) + '</td></tr><tr><td style="text-align: right">Wind Direction (Deg.)</td><td style="text-align: left">' + parseFloat(jsondata.features[0].properties.wind_direction_deg) + '</td></tr><tr><td style="text-align: right">Humidity 1 (%) </td><td style="text-align: left">' + parseFloat(jsondata.features[0].properties.humidity_1) + '</td></tr><tr><td style="text-align: right">Humidity 2 (%)</td><td style="text-align: left">' + parseFloat(jsondata.features[0].properties.humidity_2) + '</td></tr><tr><td style="text-align: right">Cloud Cover </td><td style="text-align: left">' + parseFloat(jsondata.features[0].properties.cloud_cover_octa) + '</td></tr><tr></table>';
+                    content.innerHTML = '<table class="table table-bordered" style="border:1px solid black;width: 100%;color:black"><tr ><td style="background-color:skyblue;text-align:center;font-weight:bold;" colspan=2 >IMD Weather Forecast Attribute Information</td></tr><tr><td style="text-align: left">District </td><td style="text-align: left">' + jsondata.features[0].properties.dtnname + '</td></tr><tr><td style="text-align: left">Taluka </td><td style="text-align: left">' + jsondata.features[0].properties.thnname + '</td></tr><tr><td style="text-align: left">Forecast Date </td><td style="text-align: left">' + jsondata.features[0].properties.forecast_date + '</td></tr><tr><td style="text-align: left">Rainfall (mm) </td><td style="text-align: left">' + parseFloat(jsondata.features[0].properties.rainfall_mm) + '</td></tr><tr><td style="text-align: left">Maximum Temprature &#8451; </td><td style="text-align: left ">' + parseFloat(jsondata.features[0].properties.temp_max_deg_c) + '</td></tr><tr><td style="text-align: left">Minimum Temprature &#8451; </td><td style="text-align: left">' + parseFloat(jsondata.features[0].properties.temp_min_deg_c) + '</td></tr><tr><td style="text-align: left">Wind Speed(m/s) </td><td style="text-align: left">' + parseFloat(jsondata.features[0].properties.wind_speed_ms) + '</td></tr><tr><td style="text-align: left">Wind Direction</td><td style="text-align: left">' + parseFloat(jsondata.features[0].properties.wind_direction_deg) + '</td></tr><tr><td style="text-align: left">Humidity 1 (%) </td><td style="text-align: left">' + parseFloat(jsondata.features[0].properties.humidity_1) + '</td></tr><tr><td style="text-align: left">Humidity 2 (%)</td><td style="text-align: left">' + parseFloat(jsondata.features[0].properties.humidity_2) + '</td></tr><tr><td style="text-align: left">Cloud Cover </td><td style="text-align: left">' + parseFloat(jsondata.features[0].properties.cloud_cover_octa) + '</td></tr><tr></table>';
                     overlay.setPosition(coordinate);
                 }
-
-
             });
-        
     }
 
-
 });
+
+function changeMap() {
+    // alert(sdate)
+    loadMap(sdate);
+
+}

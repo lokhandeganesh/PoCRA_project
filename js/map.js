@@ -474,7 +474,7 @@ function checkboxevt(val) {
     if (val.checked) {
         // alert(val.value)
         if (val.value === "Settlement") {
-            //addRasterLayer(val.value, "otherlayer");
+            // addRasterLayer(val.value, "otherlayer");
             addMapTolayer1(val.value, "otherlayer");
             legend();
         } else if (val.value === "Structures") {
@@ -498,24 +498,28 @@ function checkboxevt(val) {
 
 }
 
-function addRasterLayer(lName,type) {
-     var district = document.getElementById("district").value;
+function addRasterLayer(lName, type) {
+    var layer;
+    var district = document.getElementById("district").value;
     var subdivision = document.getElementById("division").value;
     var taluka = document.getElementById("taluka").value;
     var village = document.getElementById("village").value;
     // alert(lName)
-    var layer = new ol.layer.Image({
+    if (layer) {
+        map.removeLayer(layer);
+    }
+    layer = new ol.layer.Image({
         // opacity: 0.6,
-        title:lName,
+        title: lName,
         type: type,
-    source: new ol.source.ImageWMS({
-        url: 'http://gis.mahapocra.gov.in/geoserver/PoCRA_Dashboard/wms',
-      params: {
-        'LAYERS': 'PoCRA_Dashboard:'+lName
-      }
-    })
-  });
-//   map.addLayer(layer);
+        source: new ol.source.ImageWMS({
+            url: 'http://gis.mahapocra.gov.in/geoserver/PoCRA_Dashboard/wms',
+            params: {
+                'LAYERS': 'PoCRA_Dashboard:' + lName
+            }
+        })
+    });
+    //   map.addLayer(layer);
     // var layer = new ol.layer.Tile({
     //     extent: extentforLayer,
     //     title: lName,
@@ -540,6 +544,7 @@ function addRasterLayer(lName,type) {
         });
         map.addLayer(layer)
         croplayer(lName, "District", "dtncode", district);
+        legend();
     } else if (district !== "-1" && subdivision !== "-1" && taluka === "-1" && village === "-1") {
         map.getLayers().forEach(function(layer, i) {
             if (map.getLayers().item(i).get('title') === type) {
@@ -548,6 +553,7 @@ function addRasterLayer(lName,type) {
         });
         map.addLayer(layer)
         croplayer(lName, "Subdivision", "sdcode", subdivision);
+        legend();
     } else if (district !== "-1" && subdivision !== "-1" && taluka !== "-1" && village === "-1") {
         map.getLayers().forEach(function(layer, i) {
             if (map.getLayers().item(i).get('title') === type) {
@@ -556,6 +562,7 @@ function addRasterLayer(lName,type) {
         });
         map.addLayer(layer)
         croplayer(lName, "Taluka", "thncode", taluka);
+        legend();
     } else if (district !== "-1" && subdivision !== "-1" && taluka !== "-1" && village !== "-1") {
         map.getLayers().forEach(function(layer, i) {
             if (map.getLayers().item(i).get('title') === type) {
@@ -564,6 +571,7 @@ function addRasterLayer(lName,type) {
         });
         map.addLayer(layer)
         croplayer(lName, "Village", "vincode", village);
+        legend();
     }
 
 
@@ -895,7 +903,7 @@ function query(layerName, paramName, paramValue, labelname) {
 
         var url = "http://gis.mahapocra.gov.in/geoserver/PoCRA_Dashboard/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=Taluka&CQL_FILTER=" + paramName + "+ILike+'" + paramValue + "'&outputFormat=application/json";
         geojson1 = new ol.layer.Vector({
-            title: layerName,
+            title: "Taluka",
             source: new ol.source.Vector({
                 url: url,
                 format: new ol.format.GeoJSON()
@@ -1202,20 +1210,20 @@ function radioChange(rdoValue) {
     if (document.getElementById("district").value === "-1") {
         alert("Select District")
         rdoValue.checked = false;
-    } 
-//     else if(rdoValue.value==="SoilDepth"){
-//         // alert(rdoValue.value)
-//  addRasterLayer(rdoValue.value,"baselayer")
+    }
+    //     else if(rdoValue.value==="SoilDepth"){
+    //         // alert(rdoValue.value)
+    //  addRasterLayer(rdoValue.value,"baselayer")
 
-//     }
-    else{
+    //     }
+    else {
 
         // alert('Old value: ' + currentValue);
         // alert('New value: ' + rdoValue.value);
         currentValue = rdoValue.value;
-        addRasterLayer(currentValue,"baselayer")
-        // addMapTolayer1(currentValue, "baselayer");
-        legend();
+        addRasterLayer(currentValue, "baselayer")
+            // addMapTolayer1(currentValue, "baselayer");
+
     }
 
 }
@@ -1382,7 +1390,7 @@ function createPDF(imgData) {
     if (imgDataList.length == Object.keys(imagesList).length) {
         // yvar=yvar+10;
         // pdf.text(700, 90, 'Legend')
-        pdf.save(map_title.concat(".pdf"));
+        pdf.save("pocra_map.pdf");
         location.reload();
         //window.open(doc.output('bloburl'), '_blank');
     }
@@ -1426,7 +1434,7 @@ function CreatePDFfromHTML() {
         document.getElementById("compassimg").style.display = "none";
         document.getElementById("logoimg").style.display = "none";
         // document.getElementById("legend").style.display = "block";
-        pdf.save(map_title.concat(".pdf"));
+        pdf.save("pocra_map.pdf");
     });
 
     // html2canvas($("#mydata")[0]).then(function (canvas) {
@@ -1621,6 +1629,15 @@ function clearlayer() {
 
 function legend() {
 
+    var maplist = [];
+    for (var i = 1; i < map.getLayers().get('length'); i++) {
+        maplist.push(map.getLayers().item(i).get('title'))
+
+    }
+    console.log(maplist.length)
+
+
+
     var myTableDiv = document.getElementById("mydata");
     myTableDiv.innerHTML = "";
     var table = document.createElement('TABLE');
@@ -1629,19 +1646,22 @@ function legend() {
     var tableBody = document.createElement('TBODY');
     table.appendChild(tableBody);
 
-    for (var i = 1; i < map.getLayers().get('length'); i++) {
+    for (var i = 0; i < maplist.length; i++) {
         var tr = document.createElement('TR');
         tableBody.appendChild(tr);
+        // console.log(maplist[i])
+        // for (var j = 0; j < i; j++) {
+        var td = document.createElement('TD');
+        td.width = '75';
+        // console.log(maplist[i])
 
-        for (var j = 0; j < 1; j++) {
-            var td = document.createElement('TD');
-            td.width = '75';
-            // td.appendChild(document.createTextNode("Cell " + i + "," + j));
-            // tr.appendChild(td);
-            var img = '<img src="./legend/' + map.getLayers().item(i).get('title') + '.png" ><br>'
-            var row = table.insertRow(i);
-            row.insertCell(0).innerHTML = img;
-        }
+        // td.appendChild(document.createTextNode("Cell " + i + "," + j));
+        // tr.appendChild(td);
+
+        var img = '<img src="./legend/' + maplist[i] + '.png" ><br>'
+        var row = table.insertRow(i);
+        row.insertCell(0).innerHTML = img;
+        // }
     }
     myTableDiv.appendChild(table);
 
