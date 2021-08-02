@@ -1,0 +1,740 @@
+[
+    {
+        "address": "AT.PO.HIVARA TAL.ASHTI DIST.BEED",
+        "blockname": "Ashti",
+        "date": "2021-05-02T00:29:11.839217+05:30",
+        "district": "Beed",
+        "farmer_name": "POPAT YADAV LAGAD",
+        "farmsize": "",
+        "father_name": "YADAV",
+        "irrigated": "Irrigated",
+        "khasrano": "-",
+        "latitude": "",
+        "longitude": "",
+        "mobile": "",
+        "sample_coll_date": "",
+        "shc_no": "MH558747/2017-18/73180058/1",
+        "soil_sample_no": "MH558747/2017-18/73180058",
+        "subdistname": "Ashti",
+        "surveyno": "21",
+        "vincode": "558747",
+        "vinname": "Hivara",
+        "testresult": [
+            {
+                "rating": "Moderately alkaline",
+                "shc_no": "MH558747/2017-18/73180058/1",
+                "soil_sample_no": "MH558747/2017-18/73180058",
+                "testparamid": 5,
+                "testparamname": "pH",
+                "testvalue": "8.14",
+                "unit": ""
+            },
+            {
+                "rating": "Normal",
+                "shc_no": "MH558747/2017-18/73180058/1",
+                "soil_sample_no": "MH558747/2017-18/73180058",
+                "testparamid": 4,
+                "testparamname": "EC",
+                "testvalue": "0.77",
+                "unit": "dS/m"
+            },
+            {
+                "rating": "Low",
+                "shc_no": "MH558747/2017-18/73180058/1",
+                "soil_sample_no": "MH558747/2017-18/73180058",
+                "testparamid": 7,
+                "testparamname": "Organic Carbon (OC)",
+                "testvalue": "0.38",
+                "unit": "%"
+            },
+            {
+                "rating": "Very Low",
+                "shc_no": "MH558747/2017-18/73180058/1",
+                "soil_sample_no": "MH558747/2017-18/73180058",
+                "testparamid": 2,
+                "testparamname": "Available Nitrogen (N)",
+                "testvalue": "100.35",
+                "unit": "kg/ha"
+            },
+            {
+                "rating": "Medium",
+                "shc_no": "MH558747/2017-18/73180058/1",
+                "soil_sample_no": "MH558747/2017-18/73180058",
+                "testparamid": 3,
+                "testparamname": "Available Phosphorus (P)",
+                "testvalue": "18.05",
+                "unit": "kg/ha"
+            },
+            {
+                "rating": "High",
+                "shc_no": "MH558747/2017-18/73180058/1",
+                "soil_sample_no": "MH558747/2017-18/73180058",
+                "testparamid": 6,
+                "testparamname": "Available Potassium (K)",
+                "testvalue": "537.60",
+                "unit": "kg/ha"
+            },
+            {
+                "rating": "Sufficient",
+                "shc_no": "MH558747/2017-18/73180058/1",
+                "soil_sample_no": "MH558747/2017-18/73180058",
+                "testparamid": 37,
+                "testparamname": "Available Sulphur (S)",
+                "testvalue": "69.65",
+                "unit": "ppm"
+            },
+            {
+                "rating": "Sufficient",
+                "shc_no": "MH558747/2017-18/73180058/1",
+                "soil_sample_no": "MH558747/2017-18/73180058",
+                "testparamid": 8,
+                "testparamname": "Available Zinc (Zn)",
+                "testvalue": "0.78",
+                "unit": "ppm"
+            },
+            {
+                "rating": "Sufficient",
+                "shc_no": "MH558747/2017-18/73180058/1",
+                "soil_sample_no": "MH558747/2017-18/73180058",
+                "testparamid": 36,
+                "testparamname": "Available Boron (B)",
+                "testvalue": "2.44",
+                "unit": "ppm"
+            },
+            {
+                "rating": "Sufficient",
+                "shc_no": "MH558747/2017-18/73180058/1",
+                "soil_sample_no": "MH558747/2017-18/73180058",
+                "testparamid": 9,
+                "testparamname": "Available Iron (Fe)",
+                "testvalue": "8.22",
+                "unit": "ppm"
+            },
+            {
+                "rating": "Sufficient",
+                "shc_no": "MH558747/2017-18/73180058/1",
+                "soil_sample_no": "MH558747/2017-18/73180058",
+                "testparamid": 35,
+                "testparamname": "Available Manganese (Mn)",
+                "testvalue": "13.26",
+                "unit": "ppm"
+            },
+            {
+                "rating": "Sufficient",
+                "shc_no": "MH558747/2017-18/73180058/1",
+                "soil_sample_no": "MH558747/2017-18/73180058",
+                "testparamid": 10,
+                "testparamname": "Available Copper (Cu)",
+                "testvalue": "0.69",
+                "unit": "ppm"
+            }
+        ],
+        "fertrecommandation": [
+            {
+                "bio_fert": "",
+                "bio_fert_qty": "",
+                "crop_variety": "Jowar(Sorgham)",
+                "organic_fert": "FYM",
+                "reference_yield": "q/a",
+                "shc_no": "MH558747/2017-18/73180058/1",
+                "soil_sample_no": "MH558747/2017-18/73180058",
+                "sr_no": 1
+            },
+            {
+                "bio_fert": "",
+                "bio_fert_qty": "",
+                "crop_variety": "Bt Cotton(Cotton)",
+                "organic_fert": "FYM",
+                "reference_yield": "q/a",
+                "shc_no": "MH558747/2017-18/73180058/1",
+                "soil_sample_no": "MH558747/2017-18/73180058",
+                "sr_no": 2
+            },
+            {
+                "bio_fert": "",
+                "bio_fert_qty": "",
+                "crop_variety": "Arhar (Tur)",
+                "organic_fert": "FYM",
+                "reference_yield": "q/a",
+                "shc_no": "MH558747/2017-18/73180058/1",
+                "soil_sample_no": "MH558747/2017-18/73180058",
+                "sr_no": 3
+            }
+        ],
+        "combination": [
+            {
+                "furt_comb_one_name": "Urea",
+                "furt_comb_one_quantity": "291 kg/ha",
+                "furt_comb_two_name": "DAP(18-46-0)",
+                "furt_comb_two_quantity": "87 kg/ha",
+                "shc_no": "MH558747/2017-18/73180058/1",
+                "soil_sample_no": "MH558747/2017-18/73180058",
+                "sr_no": 1
+            },
+            {
+                "furt_comb_one_name": "Single Superphosphate",
+                "furt_comb_one_quantity": "250 kg/ha",
+                "furt_comb_two_name": "Urea",
+                "furt_comb_two_quantity": "257 kg/ha",
+                "shc_no": "MH558747/2017-18/73180058/1",
+                "soil_sample_no": "MH558747/2017-18/73180058",
+                "sr_no": 1
+            },
+            {
+                "furt_comb_one_name": "Potassium Chloride (Muriate of Potash) (Granular)",
+                "furt_comb_one_quantity": "45 kg/ha",
+                "furt_comb_two_name": "Potassium Chloride (Muriate of Potash) (Granular)",
+                "furt_comb_two_quantity": "45 kg/ha",
+                "shc_no": "MH558747/2017-18/73180058/1",
+                "soil_sample_no": "MH558747/2017-18/73180058",
+                "sr_no": 1
+            },
+            {
+                "furt_comb_one_name": "Urea",
+                "furt_comb_one_quantity": "435 kg/ha",
+                "furt_comb_two_name": "DAP(18-46-0)",
+                "furt_comb_two_quantity": "130 kg/ha",
+                "shc_no": "MH558747/2017-18/73180058/1",
+                "soil_sample_no": "MH558747/2017-18/73180058",
+                "sr_no": 2
+            },
+            {
+                "furt_comb_one_name": "Single Superphosphate",
+                "furt_comb_one_quantity": "375 kg/ha",
+                "furt_comb_two_name": "Urea",
+                "furt_comb_two_quantity": "384 kg/ha",
+                "shc_no": "MH558747/2017-18/73180058/1",
+                "soil_sample_no": "MH558747/2017-18/73180058",
+                "sr_no": 2
+            },
+            {
+                "furt_comb_one_name": "Potassium Chloride (Muriate of Potash) (Granular)",
+                "furt_comb_one_quantity": "67 kg/ha",
+                "furt_comb_two_name": "Potassium Chloride (Muriate of Potash) (Granular)",
+                "furt_comb_two_quantity": "67 kg/ha",
+                "shc_no": "MH558747/2017-18/73180058/1",
+                "soil_sample_no": "MH558747/2017-18/73180058",
+                "sr_no": 2
+            },
+            {
+                "furt_comb_one_name": "Urea",
+                "furt_comb_one_quantity": "91 kg/ha",
+                "furt_comb_two_name": "DAP(18-46-0)",
+                "furt_comb_two_quantity": "109 kg/ha",
+                "shc_no": "MH558747/2017-18/73180058/1",
+                "soil_sample_no": "MH558747/2017-18/73180058",
+                "sr_no": 3
+            },
+            {
+                "furt_comb_one_name": "Single Superphosphate",
+                "furt_comb_one_quantity": "313 kg/ha",
+                "furt_comb_two_name": "Urea",
+                "furt_comb_two_quantity": "49 kg/ha",
+                "shc_no": "MH558747/2017-18/73180058/1",
+                "soil_sample_no": "MH558747/2017-18/73180058",
+                "sr_no": 3
+            },
+            {
+                "furt_comb_one_name": "Potassium Chloride (Muriate of Potash) (Granular)",
+                "furt_comb_one_quantity": "28 kg/ha",
+                "furt_comb_two_name": "Potassium Chloride (Muriate of Potash) (Granular)",
+                "furt_comb_two_quantity": "28 kg/ha",
+                "shc_no": "MH558747/2017-18/73180058/1",
+                "soil_sample_no": "MH558747/2017-18/73180058",
+                "sr_no": 3
+            }
+        ]
+    },
+    {
+        "address": "AT.PO.HIVARA TAL.ASHTI.DIST.BEED",
+        "blockname": "Ashti",
+        "date": "2021-05-02T00:29:15.642317+05:30",
+        "district": "Beed",
+        "farmer_name": "ASHOK KHANDU LAGAD",
+        "farmsize": "",
+        "father_name": "KHANDU",
+        "irrigated": "Rainfed",
+        "khasrano": "-",
+        "latitude": "",
+        "longitude": "",
+        "mobile": "",
+        "sample_coll_date": "",
+        "shc_no": "MH558747/2017-18/73226811/1",
+        "soil_sample_no": "MH558747/2017-18/73226811",
+        "subdistname": "Ashti",
+        "surveyno": "21",
+        "vincode": "558747",
+        "vinname": "Hivara",
+        "testresult": [
+            {
+                "rating": "Normal",
+                "shc_no": "MH558747/2017-18/73226811/1",
+                "soil_sample_no": "MH558747/2017-18/73226811",
+                "testparamid": 4,
+                "testparamname": "EC",
+                "testvalue": "0.89",
+                "unit": "dS/m"
+            },
+            {
+                "rating": "Moderately alkaline",
+                "shc_no": "MH558747/2017-18/73226811/1",
+                "soil_sample_no": "MH558747/2017-18/73226811",
+                "testparamid": 5,
+                "testparamname": "pH",
+                "testvalue": "8.44",
+                "unit": ""
+            },
+            {
+                "rating": "Very Low",
+                "shc_no": "MH558747/2017-18/73226811/1",
+                "soil_sample_no": "MH558747/2017-18/73226811",
+                "testparamid": 7,
+                "testparamname": "Organic Carbon (OC)",
+                "testvalue": "0.11",
+                "unit": "%"
+            },
+            {
+                "rating": "Low",
+                "shc_no": "MH558747/2017-18/73226811/1",
+                "soil_sample_no": "MH558747/2017-18/73226811",
+                "testparamid": 2,
+                "testparamname": "Available Nitrogen (N)",
+                "testvalue": "175.62",
+                "unit": "kg/ha"
+            },
+            {
+                "rating": "Low",
+                "shc_no": "MH558747/2017-18/73226811/1",
+                "soil_sample_no": "MH558747/2017-18/73226811",
+                "testparamid": 3,
+                "testparamname": "Available Phosphorus (P)",
+                "testvalue": "8.56",
+                "unit": "kg/ha"
+            },
+            {
+                "rating": "High",
+                "shc_no": "MH558747/2017-18/73226811/1",
+                "soil_sample_no": "MH558747/2017-18/73226811",
+                "testparamid": 6,
+                "testparamname": "Available Potassium (K)",
+                "testvalue": "560.00",
+                "unit": "kg/ha"
+            },
+            {
+                "rating": "Sufficient",
+                "shc_no": "MH558747/2017-18/73226811/1",
+                "soil_sample_no": "MH558747/2017-18/73226811",
+                "testparamid": 37,
+                "testparamname": "Available Sulphur (S)",
+                "testvalue": "89.36",
+                "unit": "ppm"
+            },
+            {
+                "rating": "Sufficient",
+                "shc_no": "MH558747/2017-18/73226811/1",
+                "soil_sample_no": "MH558747/2017-18/73226811",
+                "testparamid": 8,
+                "testparamname": "Available Zinc (Zn)",
+                "testvalue": "1.24",
+                "unit": "ppm"
+            },
+            {
+                "rating": "Sufficient",
+                "shc_no": "MH558747/2017-18/73226811/1",
+                "soil_sample_no": "MH558747/2017-18/73226811",
+                "testparamid": 36,
+                "testparamname": "Available Boron (B)",
+                "testvalue": "2.85",
+                "unit": "ppm"
+            },
+            {
+                "rating": "Sufficient",
+                "shc_no": "MH558747/2017-18/73226811/1",
+                "soil_sample_no": "MH558747/2017-18/73226811",
+                "testparamid": 9,
+                "testparamname": "Available Iron (Fe)",
+                "testvalue": "4.70",
+                "unit": "ppm"
+            },
+            {
+                "rating": "Sufficient",
+                "shc_no": "MH558747/2017-18/73226811/1",
+                "soil_sample_no": "MH558747/2017-18/73226811",
+                "testparamid": 35,
+                "testparamname": "Available Manganese (Mn)",
+                "testvalue": "10.42",
+                "unit": "ppm"
+            },
+            {
+                "rating": "Sufficient",
+                "shc_no": "MH558747/2017-18/73226811/1",
+                "soil_sample_no": "MH558747/2017-18/73226811",
+                "testparamid": 10,
+                "testparamname": "Available Copper (Cu)",
+                "testvalue": "0.55",
+                "unit": "ppm"
+            }
+        ],
+        "fertrecommandation": [
+            {
+                "bio_fert": "",
+                "bio_fert_qty": "",
+                "crop_variety": "Jowar(Sorgham)",
+                "organic_fert": "FYM",
+                "reference_yield": "q/a",
+                "shc_no": "MH558747/2017-18/73226811/1",
+                "soil_sample_no": "MH558747/2017-18/73226811",
+                "sr_no": 1
+            },
+            {
+                "bio_fert": "",
+                "bio_fert_qty": "",
+                "crop_variety": "Bt Cotton(Cotton)",
+                "organic_fert": "FYM",
+                "reference_yield": "q/a",
+                "shc_no": "MH558747/2017-18/73226811/1",
+                "soil_sample_no": "MH558747/2017-18/73226811",
+                "sr_no": 2
+            },
+            {
+                "bio_fert": "",
+                "bio_fert_qty": "",
+                "crop_variety": "Arhar (Tur)",
+                "organic_fert": "FYM",
+                "reference_yield": "q/a",
+                "shc_no": "MH558747/2017-18/73226811/1",
+                "soil_sample_no": "MH558747/2017-18/73226811",
+                "sr_no": 3
+            }
+        ],
+        "combination": [
+            {
+                "furt_comb_one_name": "Urea",
+                "furt_comb_one_quantity": "230 kg/ha",
+                "furt_comb_two_name": "DAP(18-46-0)",
+                "furt_comb_two_quantity": "115 kg/ha",
+                "shc_no": "MH558747/2017-18/73226811/1",
+                "soil_sample_no": "MH558747/2017-18/73226811",
+                "sr_no": 1
+            },
+            {
+                "furt_comb_one_name": "Single Superphosphate",
+                "furt_comb_one_quantity": "331 kg/ha",
+                "furt_comb_two_name": "Urea",
+                "furt_comb_two_quantity": "185 kg/ha",
+                "shc_no": "MH558747/2017-18/73226811/1",
+                "soil_sample_no": "MH558747/2017-18/73226811",
+                "sr_no": 1
+            },
+            {
+                "furt_comb_one_name": "Potassium Chloride (Muriate of Potash) (Granular)",
+                "furt_comb_one_quantity": "45 kg/ha",
+                "furt_comb_two_name": "Potassium Chloride (Muriate of Potash) (Granular)",
+                "furt_comb_two_quantity": "45 kg/ha",
+                "shc_no": "MH558747/2017-18/73226811/1",
+                "soil_sample_no": "MH558747/2017-18/73226811",
+                "sr_no": 1
+            },
+            {
+                "furt_comb_one_name": "Urea",
+                "furt_comb_one_quantity": "348 kg/ha",
+                "furt_comb_two_name": "DAP(18-46-0)",
+                "furt_comb_two_quantity": "174 kg/ha",
+                "shc_no": "MH558747/2017-18/73226811/1",
+                "soil_sample_no": "MH558747/2017-18/73226811",
+                "sr_no": 2
+            },
+            {
+                "furt_comb_one_name": "Single Superphosphate",
+                "furt_comb_one_quantity": "500 kg/ha",
+                "furt_comb_two_name": "Urea",
+                "furt_comb_two_quantity": "280 kg/ha",
+                "shc_no": "MH558747/2017-18/73226811/1",
+                "soil_sample_no": "MH558747/2017-18/73226811",
+                "sr_no": 2
+            },
+            {
+                "furt_comb_one_name": "Potassium Chloride (Muriate of Potash) (Granular)",
+                "furt_comb_one_quantity": "67 kg/ha",
+                "furt_comb_two_name": "Potassium Chloride (Muriate of Potash) (Granular)",
+                "furt_comb_two_quantity": "67 kg/ha",
+                "shc_no": "MH558747/2017-18/73226811/1",
+                "soil_sample_no": "MH558747/2017-18/73226811",
+                "sr_no": 2
+            },
+            {
+                "furt_comb_one_name": "Urea",
+                "furt_comb_one_quantity": "72 kg/ha",
+                "furt_comb_two_name": "DAP(18-46-0)",
+                "furt_comb_two_quantity": "146 kg/ha",
+                "shc_no": "MH558747/2017-18/73226811/1",
+                "soil_sample_no": "MH558747/2017-18/73226811",
+                "sr_no": 3
+            },
+            {
+                "furt_comb_one_name": "Single Superphosphate",
+                "furt_comb_one_quantity": "419 kg/ha",
+                "furt_comb_two_name": "Urea",
+                "furt_comb_two_quantity": "15 kg/ha",
+                "shc_no": "MH558747/2017-18/73226811/1",
+                "soil_sample_no": "MH558747/2017-18/73226811",
+                "sr_no": 3
+            },
+            {
+                "furt_comb_one_name": "Potassium Chloride (Muriate of Potash) (Granular)",
+                "furt_comb_one_quantity": "28 kg/ha",
+                "furt_comb_two_name": "Potassium Chloride (Muriate of Potash) (Granular)",
+                "furt_comb_two_quantity": "28 kg/ha",
+                "shc_no": "MH558747/2017-18/73226811/1",
+                "soil_sample_no": "MH558747/2017-18/73226811",
+                "sr_no": 3
+            }
+        ]
+    },
+    {
+        "address": "AT.PO.HIVARA TAL.ASHTI.DIST.BEED",
+        "blockname": "Ashti",
+        "date": "2021-05-02T00:29:17.002178+05:30",
+        "district": "Beed",
+        "farmer_name": "DNYANDEV MAHADEV LAGAD",
+        "farmsize": "",
+        "father_name": "MAHADEV",
+        "irrigated": "Rainfed",
+        "khasrano": "-",
+        "latitude": "",
+        "longitude": "",
+        "mobile": "",
+        "sample_coll_date": "",
+        "shc_no": "MH558747/2017-18/73237644/1",
+        "soil_sample_no": "MH558747/2017-18/73237644",
+        "subdistname": "Ashti",
+        "surveyno": "21",
+        "vincode": "558747",
+        "vinname": "Hivara",
+        "testresult": [
+            {
+                "rating": "Moderately alkaline",
+                "shc_no": "MH558747/2017-18/73237644/1",
+                "soil_sample_no": "MH558747/2017-18/73237644",
+                "testparamid": 5,
+                "testparamname": "pH",
+                "testvalue": "8.24",
+                "unit": ""
+            },
+            {
+                "rating": "Normal",
+                "shc_no": "MH558747/2017-18/73237644/1",
+                "soil_sample_no": "MH558747/2017-18/73237644",
+                "testparamid": 4,
+                "testparamname": "EC",
+                "testvalue": "0.59",
+                "unit": "dS/m"
+            },
+            {
+                "rating": "High",
+                "shc_no": "MH558747/2017-18/73237644/1",
+                "soil_sample_no": "MH558747/2017-18/73237644",
+                "testparamid": 7,
+                "testparamname": "Organic Carbon (OC)",
+                "testvalue": "0.78",
+                "unit": "%"
+            },
+            {
+                "rating": "Very Low",
+                "shc_no": "MH558747/2017-18/73237644/1",
+                "soil_sample_no": "MH558747/2017-18/73237644",
+                "testparamid": 2,
+                "testparamname": "Available Nitrogen (N)",
+                "testvalue": "112.90",
+                "unit": "kg/ha"
+            },
+            {
+                "rating": "Low",
+                "shc_no": "MH558747/2017-18/73237644/1",
+                "soil_sample_no": "MH558747/2017-18/73237644",
+                "testparamid": 3,
+                "testparamname": "Available Phosphorus (P)",
+                "testvalue": "6.45",
+                "unit": "kg/ha"
+            },
+            {
+                "rating": "Medium",
+                "shc_no": "MH558747/2017-18/73237644/1",
+                "soil_sample_no": "MH558747/2017-18/73237644",
+                "testparamid": 6,
+                "testparamname": "Available Potassium (K)",
+                "testvalue": "257.60",
+                "unit": "kg/ha"
+            },
+            {
+                "rating": "Sufficient",
+                "shc_no": "MH558747/2017-18/73237644/1",
+                "soil_sample_no": "MH558747/2017-18/73237644",
+                "testparamid": 37,
+                "testparamname": "Available Sulphur (S)",
+                "testvalue": "87.53",
+                "unit": "ppm"
+            },
+            {
+                "rating": "Sufficient",
+                "shc_no": "MH558747/2017-18/73237644/1",
+                "soil_sample_no": "MH558747/2017-18/73237644",
+                "testparamid": 8,
+                "testparamname": "Available Zinc (Zn)",
+                "testvalue": "1.30",
+                "unit": "ppm"
+            },
+            {
+                "rating": "Sufficient",
+                "shc_no": "MH558747/2017-18/73237644/1",
+                "soil_sample_no": "MH558747/2017-18/73237644",
+                "testparamid": 36,
+                "testparamname": "Available Boron (B)",
+                "testvalue": "2.63",
+                "unit": "ppm"
+            },
+            {
+                "rating": "Sufficient",
+                "shc_no": "MH558747/2017-18/73237644/1",
+                "soil_sample_no": "MH558747/2017-18/73237644",
+                "testparamid": 9,
+                "testparamname": "Available Iron (Fe)",
+                "testvalue": "15.20",
+                "unit": "ppm"
+            },
+            {
+                "rating": "Sufficient",
+                "shc_no": "MH558747/2017-18/73237644/1",
+                "soil_sample_no": "MH558747/2017-18/73237644",
+                "testparamid": 35,
+                "testparamname": "Available Manganese (Mn)",
+                "testvalue": "13.87",
+                "unit": "ppm"
+            },
+            {
+                "rating": "Sufficient",
+                "shc_no": "MH558747/2017-18/73237644/1",
+                "soil_sample_no": "MH558747/2017-18/73237644",
+                "testparamid": 10,
+                "testparamname": "Available Copper (Cu)",
+                "testvalue": "0.42",
+                "unit": "ppm"
+            }
+        ],
+        "fertrecommandation": [
+            {
+                "bio_fert": "",
+                "bio_fert_qty": "",
+                "crop_variety": "Jowar(Sorgham)",
+                "organic_fert": "FYM",
+                "reference_yield": "q/a",
+                "shc_no": "MH558747/2017-18/73237644/1",
+                "soil_sample_no": "MH558747/2017-18/73237644",
+                "sr_no": 1
+            },
+            {
+                "bio_fert": "",
+                "bio_fert_qty": "",
+                "crop_variety": "Bt Cotton(Cotton)",
+                "organic_fert": "FYM",
+                "reference_yield": "q/a",
+                "shc_no": "MH558747/2017-18/73237644/1",
+                "soil_sample_no": "MH558747/2017-18/73237644",
+                "sr_no": 2
+            },
+            {
+                "bio_fert": "",
+                "bio_fert_qty": "",
+                "crop_variety": "Arhar (Tur)",
+                "organic_fert": "FYM",
+                "reference_yield": "q/a",
+                "shc_no": "MH558747/2017-18/73237644/1",
+                "soil_sample_no": "MH558747/2017-18/73237644",
+                "sr_no": 3
+            }
+        ],
+        "combination": [
+            {
+                "furt_comb_one_name": "Urea",
+                "furt_comb_one_quantity": "291 kg/ha",
+                "furt_comb_two_name": "DAP(18-46-0)",
+                "furt_comb_two_quantity": "115 kg/ha",
+                "shc_no": "MH558747/2017-18/73237644/1",
+                "soil_sample_no": "MH558747/2017-18/73237644",
+                "sr_no": 1
+            },
+            {
+                "furt_comb_one_name": "Single Superphosphate",
+                "furt_comb_one_quantity": "331 kg/ha",
+                "furt_comb_two_name": "Urea",
+                "furt_comb_two_quantity": "246 kg/ha",
+                "shc_no": "MH558747/2017-18/73237644/1",
+                "soil_sample_no": "MH558747/2017-18/73237644",
+                "sr_no": 1
+            },
+            {
+                "furt_comb_one_name": "Potassium Chloride (Muriate of Potash) (Granular)",
+                "furt_comb_one_quantity": "67 kg/ha",
+                "furt_comb_two_name": "Potassium Chloride (Muriate of Potash) (Granular)",
+                "furt_comb_two_quantity": "67 kg/ha",
+                "shc_no": "MH558747/2017-18/73237644/1",
+                "soil_sample_no": "MH558747/2017-18/73237644",
+                "sr_no": 1
+            },
+            {
+                "furt_comb_one_name": "Urea",
+                "furt_comb_one_quantity": "435 kg/ha",
+                "furt_comb_two_name": "DAP(18-46-0)",
+                "furt_comb_two_quantity": "174 kg/ha",
+                "shc_no": "MH558747/2017-18/73237644/1",
+                "soil_sample_no": "MH558747/2017-18/73237644",
+                "sr_no": 2
+            },
+            {
+                "furt_comb_one_name": "Single Superphosphate",
+                "furt_comb_one_quantity": "500 kg/ha",
+                "furt_comb_two_name": "Urea",
+                "furt_comb_two_quantity": "367 kg/ha",
+                "shc_no": "MH558747/2017-18/73237644/1",
+                "soil_sample_no": "MH558747/2017-18/73237644",
+                "sr_no": 2
+            },
+            {
+                "furt_comb_one_name": "Potassium Chloride (Muriate of Potash) (Granular)",
+                "furt_comb_one_quantity": "100 kg/ha",
+                "furt_comb_two_name": "Potassium Chloride (Muriate of Potash) (Granular)",
+                "furt_comb_two_quantity": "100 kg/ha",
+                "shc_no": "MH558747/2017-18/73237644/1",
+                "soil_sample_no": "MH558747/2017-18/73237644",
+                "sr_no": 2
+            },
+            {
+                "furt_comb_one_name": "Urea",
+                "furt_comb_one_quantity": "91 kg/ha",
+                "furt_comb_two_name": "DAP(18-46-0)",
+                "furt_comb_two_quantity": "146 kg/ha",
+                "shc_no": "MH558747/2017-18/73237644/1",
+                "soil_sample_no": "MH558747/2017-18/73237644",
+                "sr_no": 3
+            },
+            {
+                "furt_comb_one_name": "Single Superphosphate",
+                "furt_comb_one_quantity": "419 kg/ha",
+                "furt_comb_two_name": "Urea",
+                "furt_comb_two_quantity": "34 kg/ha",
+                "shc_no": "MH558747/2017-18/73237644/1",
+                "soil_sample_no": "MH558747/2017-18/73237644",
+                "sr_no": 3
+            },
+            {
+                "furt_comb_one_name": "Potassium Chloride (Muriate of Potash) (Granular)",
+                "furt_comb_one_quantity": "42 kg/ha",
+                "furt_comb_two_name": "Potassium Chloride (Muriate of Potash) (Granular)",
+                "furt_comb_two_quantity": "42 kg/ha",
+                "shc_no": "MH558747/2017-18/73237644/1",
+                "soil_sample_no": "MH558747/2017-18/73237644",
+                "sr_no": 3
+            }
+        ]
+    }
+]

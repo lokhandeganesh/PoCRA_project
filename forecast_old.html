@@ -1,0 +1,864 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Mirrored from radixtouch.in/templates/admin/smile/source/layout_collapse.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 04 Feb 2020 10:57:39 GMT -->
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <meta name="description" content="Responsive Admin Template" />
+    <meta name="author" content="SmartUniversity" />
+    <title>PoCRA Gis</title>
+    <!-- google font -->
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" rel="stylesheet" type="text/css" />
+    <!-- icons -->
+    <link href="assets/plugins/simple-line-icons/simple-line-icons.min.css" rel="stylesheet" type="text/css" />
+    <link href="fonts/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+    <link href="fonts/material-design-icons/material-icon.css" rel="stylesheet" type="text/css" />
+    <!--bootstrap -->
+    <link href="assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="assets/plugins/summernote/summernote.css" rel="stylesheet">
+    <!-- Material Design Lite CSS -->
+    <link rel="stylesheet" href="assets/plugins/material/material.min.css">
+    <link rel="stylesheet" href="assets/css/material_style.css">
+    <!-- animation -->
+    <link href="assets/css/pages/animate_page.css" rel="stylesheet">
+    <!-- inbox style -->
+    <link href="assets/css/pages/inbox.min.css" rel="stylesheet" type="text/css" />
+    <!-- Theme Styles -->
+
+    <link href="assets/css/plugins.min.css" rel="stylesheet" type="text/css" />
+    <link href="assets/css/style.css" rel="stylesheet" type="text/css" />
+    <link href="assets/css/responsive.css" rel="stylesheet" type="text/css" />
+    <link href="assets/css/theme-color.css" rel="stylesheet" type="text/css" />
+    <!-- favicon -->
+    <!--        <link rel="shortcut icon" href="assets/img/favicon.ico" /> 
+                    <link type="text/css" rel="stylesheet" href="css/bootstrap.min.css">    
+                    <script type="text/javascript" src="js/jquery.min.js"></script>
+                    <script type="text/javascript" src="js/jquery.js"></script>
+                    <link type="text/css" rel="stylesheet" href="css/ol.css" >
+                    <link type="text/css" rel="stylesheet" href="css/style.css"  />
+                    <script type="text/javascript" src="js/ol.js" ></script>
+                    <link rel="stylesheet" href="css/ol3-layerswitcher.css">
+                    <script type="text/javascript" src="js/ol3gm.js" ></script>
+                    <script type="text/javascript" src="js/template.js"></script>-->
+    <link type="text/css" rel="stylesheet" href="css/ol.css">
+    <script src="js/jquery.js"></script>
+
+    <!-- <link type="text/css" rel="stylesheet" href="css/style.css" /> -->
+
+    <link rel="stylesheet" href="css/ol3-layerswitcher.css">
+
+    <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <style>
+        #wms_layers_btn {
+            position: absolute;
+            z-index: 500;
+            top: 12%;
+            left: 1%;
+        }
+        
+        #wms_layers_btn1 {
+            position: absolute;
+            z-index: 500;
+            top: 12%;
+            right: 1%;
+        }
+        
+        .box {
+            width: 10%;
+            height: 100%;
+            position: absolute;
+            top: 80%;
+            right: 1%;
+            opacity: 1;
+            /* for demo purpose  */
+        }
+        
+        .stack-top {
+            z-index: 9;
+            margin: 20px;
+            right: 1%;
+            /* for demo purpose  */
+        }
+        /* The Modal (background) */
+        
+        .modal {
+            display: none;
+            /* Hidden by default */
+            position: fixed;
+            /* Stay in place */
+            z-index: 1;
+            /* Sit on top */
+            left: 0;
+            top: 0;
+            /* width: 100%; Full width */
+            /* height: 100%; Full height */
+            overflow: auto;
+            /* Enable scroll if needed */
+            /* background-color: rgb(0,0,0); Fallback color */
+            /* background-color: rgba(0,0,0,0.4); Black w/ opacity */
+        }
+        /* Modal Content/Box */
+        
+        .modal-content {
+            /* background-color: #fefefe; */
+            margin: 15% auto;
+            /* 15% from the top and centered */
+            padding: 20px;
+            border: 1px solid #888;
+            width: 35%;
+            /* Could be more or less, depending on screen size */
+        }
+        /* The Close Button */
+        
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+        
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+    </style>
+
+
+    <style>
+        .collapsible {
+            background-color: #777;
+            color: white;
+            cursor: pointer;
+            padding: 18px;
+            width: 100%;
+            border: none;
+            text-align: left;
+            outline: none;
+            font-size: 15px;
+        }
+        
+        .active,
+        .collapsible:hover {
+            background-color: #555;
+        }
+        
+        .collapsible:after {
+            content: '\002B';
+            color: white;
+            font-weight: bold;
+            float: right;
+            margin-left: 5px;
+        }
+        
+        .active:after {
+            content: "\2212";
+        }
+        
+        .content {
+            padding: 0 18px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.2s ease-out;
+            background-color: #f1f1f1;
+            /*               max-height: 130px; */
+        }
+        
+        #layertree li>span {
+            cursor: pointer;
+        }
+        
+        .header-grid {
+            grid-area: header_grid;
+            align-self: stretch;
+            justify-self: stretch;
+            /*background: linear-gradient(to right, rgb(100, 100, 100), rgb(125, 110, 40), rgb(125, 240, 150), rgb(200, 150, 100), rgb(200, 200, 255));*/
+            /*background: linear-gradient(5deg, rgb(100, 100, 100) 20%, rgb(125, 110, 40) 30%, rgb(97, 232, 127), rgb(247, 244, 82),aliceblue 70%, rgb(166, 166, 244));*/
+            /*background: linear-gradient(3deg, rgb(100, 100, 100) 20%, rgb(125, 110, 40) 30%, rgb(97, 232, 127) 45%, rgb(247, 244, 82), 50%, aliceblue, 75%, rgb(166, 166, 244));*/
+            /*background: linear-gradient(3deg, rgb(100, 100, 100) 20%, rgb(125, 110, 40) 30%, rgb(97, 232, 127) 45%, rgb(247, 244, 182), 50%, rgb(166, 166, 255), 80%, rgb(255, 255, 150), 90%, rgb(255, 255, 255));*/
+            /*background: linear-gradient(3deg, rgb(100, 100, 100) 20%, rgb(125, 110, 40) 30%, rgb(97, 232, 127) 45%, rgb(247, 244, 182), 50%, rgb(166, 166, 255) 60%, 78%, rgb(255, 255, 175), 94%, rgb(255, 255, 255) 97%);*/
+            /*background: rgb(175, 175, 175);*/
+            background: rgb(0, 150, 150);
+            /*border: 1px solid #00ddaa;*/
+            display: grid;
+            grid-template-columns: 100px 4fr;
+            /* 4fr 1fr;*/
+            grid-template-areas: "logo_grid title_grid";
+            /* site_search_grid login_button_grid";*/
+        }
+        
+        #logo-grid {
+            grid-area: logo_grid;
+            align-self: stretch;
+            justify-self: stretch;
+            align-content: center;
+            justify-content: center;
+            display: grid;
+            grid-template-areas: "logo";
+            /*background: rgb(200, 200, 200);*/
+        }
+        
+        #logo {
+            grid-area: logo;
+            margin: 0;
+            font-family: serif;
+            font-weight: bold;
+            /*font-color: rgba(255, 0, 0, 0);*/
+        }
+        
+        #title-grid {
+            grid-area: title_grid;
+            align-self: stretch;
+            justify-self: stretch;
+            justify-content: left;
+            align-content: left;
+            display: grid;
+            grid-template-areas: "title";
+        }
+        
+        #title {
+            /*  grid-area: title;
+      margin: 0;
+      font-family: serif;
+      font-weight: normal;
+      color: rgba(175, 195, 225);
+      text-shadow: 0 0 1px white, 0 0 1px white, 0 0 1px white, 0 0 1px white;
+                */
+            grid-area: title;
+            margin: 0;
+            font-family: serif;
+            font-weight: bold;
+            /*color: rgba(0, 0, 0, 1);*/
+            /*font-weight: normal;*/
+            /*color: rgba(175, 195, 225);*/
+            color: rgba(255, 255, 255);
+            text-shadow: 0 0 3px black, 0 0 1px black, 0 0 1px black, 0 0 1px black;
+        }
+        
+        #site-search-grid {
+            grid-area: site_search_grid;
+            align-self: stretch;
+            justify-self: stretch;
+            height: 100%;
+            display: grid;
+            grid-template-areas: "site_search_input";
+        }
+        
+        #site-search-input {
+            grid-area: site_search_input;
+            width: 100%;
+            height: 100%;
+            border-bottom: 2px solid;
+            background-color: rgba(255, 255, 255, 1);
+            /*border: 0px;*/
+            box-sizing: border-box;
+        }
+        
+        #login-button-grid {
+            grid-area: login_button_grid;
+            /*height: 100%;
+      width: 100%;*/
+            align-self: stretch;
+            justify-self: stretch;
+            display: grid;
+            grid-template-areas: 'login_button_text';
+        }
+        
+        #login-button-text {
+            grid-area: login_button_text;
+            align-self: center;
+            justify-self: center;
+            font-size: 1.25em;
+        }
+        
+        #login-button-grid:hover {
+            cursor: pointer;
+            background-color: rgba(0, 0, 255, 0.15);
+        }
+        
+        .ol-legend {
+            background: rgb(224, 245, 245);
+        }
+        
+        .ol-legend:hover {
+            background: rgb(226, 223, 223);
+        }
+    </style>
+
+    <!-- popup style -->
+
+
+    <style>
+        /* popup style */
+        
+        .ol-popup {
+            max-width: 300px;
+            min-width: 100px;
+            min-height: 1em;
+        }
+        /* Image on popup */
+        
+        .ol-popup img {
+            float: left;
+            margin: 0 0.5em 0 0;
+            max-width: 100px;
+            max-height: 100px;
+        }
+        /* no image content tooltips */
+        
+        .ol-popup.tooltips img {
+            display: none;
+        }
+        /* Custom orange style (tips) */
+        
+        .ol-popup.tips.orange {
+            border-color: #da7;
+            background-color: #eca;
+        }
+        
+        .ol-popup.tips.orange .anchor::before {
+            border-color: #da7;
+        }
+        
+        .ol-popup-middle.tips.orange .anchor::before {
+            border-color: #da7;
+        }
+        /* orange style (default) */
+        
+        .ol-popup.default.orange {
+            border: 4px solid #f96;
+        }
+        
+        .ol-popup.default.orange .anchor {
+            margin: -15px 18px;
+        }
+        
+        .ol-popup.default.orange .anchor::after {
+            margin: 6px
+            /*border:4 +2 px */
+            -9px;
+        }
+        
+        .ol-popup-middle.default.orange .anchor::after {
+            margin: -9px 6px
+            /*border:4 +2 px */
+            ;
+        }
+        
+        .ol-popup.default.orange .anchor::before {
+            border-color: #f96;
+        }
+        
+        .ol-popup-middle.default.orange .anchor::before {
+            border-color: #da7;
+        }
+        
+        .ol-popup.default.orange .closeBox {
+            background-color: rgba(255, 153, 102, 0.7);
+        }
+        
+        .ol-popup.default.orange .closeBox:hover {
+            background-color: rgba(255, 153, 102, 1);
+        }
+        
+        .modal {
+            overflow: hidden;
+        }
+        
+        .modal-dialog {
+            height: 300px;
+        }
+        
+        .modal-header {
+            height: 30px;
+            padding: 20px;
+            background-color: #18456b;
+            color: white;
+        }
+        
+        .modal-title {
+            margin-top: -10px;
+            font-size: 16px;
+        }
+        
+        .modal-header .close {
+            margin-top: -10px;
+            color: #fff;
+        }
+        
+        .modal-body {
+            color: #888;
+            padding: 5px 35px 20px;
+        }
+        
+        .modal-body h3 {
+            text-align: center;
+        }
+        
+        .modal-body p {
+            padding-top: 10px;
+            font-size: 1.1em;
+        }
+    </style>
+
+    <!-- ol-ext styles and js files -->
+
+    <!-- <link rel="stylesheet" href="olcss/style.css" /> -->
+    <link rel="stylesheet" href="olcss/fontmaki.css" />
+    <link rel="stylesheet" href="olcss/fontmaki2.css" />
+    <!-- <link rel="stylesheet" href="https://openlayers.org/en/latest/css/ol.css" /> -->
+    <!-- <script type="text/javascript" src="https://openlayers.org/en/latest/build/ol.js"></script> -->
+    <!-- <script src="https://cdn.polyfill.io/v2/polyfill.min.js?features=requestAnimationFrame,Element.prototype.classList,URL,Object.assign"></script> -->
+
+    <!-- ol-ext -->
+    <script src='libs/v6.0.0-dist/ol.js'></script>
+    <link rel="stylesheet" href="olcss/ol-ext.css" />
+
+    <script type="text/javascript" src="js/ol-ext.js"></script>
+    <script type="text/javascript" src="olcss/ol-ext.js"></script>
+
+    <!-- ol-ext maki and fontawesome defintions used in fontsymbol -->
+    <script type="text/javascript" src="olcss/FontAwesomeDef.js"></script>
+    <!-- The line below is only needed for old environments like Internet Explorer and Android 4.x -->
+    <script src="https://cdn.polyfill.io/v3/polyfill.min.js?features=fetch,requestAnimationFrame,Element.prototype.classList,URL,TextDecoder"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.5/jspdf.min.js"></script> -->
+
+
+
+    <style>
+        .ol-overlay.menu {
+            width: 20%;
+            background: whitesmoke;
+            color: #333;
+            box-shadow: 0px 0px 5px #000;
+            padding: 0.5em;
+            -webkit-transition: all 0.25s;
+            transition: all 0.25s;
+            display: block;
+            height: max-content;
+        }
+        /* style the close box */
+        
+        .ol-overlay.menu .ol-closebox {
+            color: #369;
+            left: 1em;
+            top: 0.5em;
+        }
+        
+        .ol-overlay.menu .ol-closebox:before {
+            content: "\f0c9";
+            font-family: FontAwesome;
+        }
+        
+        #menu {
+            padding-top: 1.5em;
+            font-size: 0.9em;
+        }
+        
+        #popup-content table {
+            border-collapse: collapse;
+        }
+        
+        #popup-content table th {
+            background-color: #f1f1f1;
+            width: 2%;
+            text-align: center;
+        }
+        
+        #popup-content table tr td {
+            background-color: #fff;
+            width: 10%;
+            text-align: center;
+        }
+        /* menu button */
+        
+        .ol-control.menu {
+            top: 0.5em;
+            left: 0.5em;
+        }
+        
+        .ol-control.menu i {
+            color: #fff;
+        }
+        
+        .ol-zoom {
+            left: auto;
+            right: 0.5em;
+        }
+        
+        .ol-rotate {
+            right: 3em;
+        }
+        
+        .ol-touch .ol-rotate {
+            right: 3.5em;
+        }
+        /**/
+        
+        .ol-overlay img {
+            max-width: 90%;
+        }
+        
+        .data,
+        .data p {
+            margin: 0;
+            text-align: center;
+            font-size: 0.9em;
+        }
+    </style>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.min.js"></script>
+    <script type="text/javascript" src="https://html2canvas.hertzen.com/dist/html2canvas.js"></script>
+
+    <!--<link rel="stylesheet" href="libs/v6.0.0-dist/ol.css">-->
+</head>
+
+<body class="page-header-fixed sidemenu-closed-hidelogo page-content-white page-md header-white sidemenu-closed dark-sidebar-color logo-dark">
+    <div class="page-wrapper">
+        <!-- start header -->
+        <div class="page-header navbar navbar-fixed-top" style="background-color: rgb(0, 150, 150);">
+            <div class="page-header-inner">
+                <!-- logo start -->
+                <div class="page-logo" style="background-color: rgb(0, 150, 150);">
+                    <a href="index.html">
+                        <img alt="" src="./images/pocra.png" height="50" width="50">
+                        <span class="logo-default" style="color: white;">PoCRA</span> </a>
+                </div>
+                <!-- logo end -->
+                <ul class="nav navbar-nav navbar-left in">
+                    <li><a href="#" class="menu-toggler sidebar-toggler"><i class="icon-menu"></i></a></li>
+                </ul>
+                <!-- <form class="search-form-opened" action="#" method="GET">
+                            <div class="input-group">
+                                <input type="text" class="form-control" placeholder="Search..." name="query">
+                                <span class="input-group-btn">
+                                    <a href="javascript:;" class="btn submit">
+                                        <i class="icon-magnifier"></i>
+                                    </a>
+                                </span>
+                            </div>
+                        </form> -->
+                <!-- start mobile menu -->
+                <a href="javascript:;" class="menu-toggler responsive-toggler" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span></span>
+                </a>
+                <!-- end mobile menu -->
+                <!-- start header menu -->
+                <div class="top-menu">
+                    <ul class="nav navbar-nav pull-right">
+                        <li class="dropdown dropdown-quick-sidebar-toggler">
+                            <a id="headerSettingButton" class="mdl-button mdl-js-button mdl-button--icon pull-right" data-upgraded=",MaterialButton">
+                                <i class="material-icons">more_vert</i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div id="title-grid">
+                    <h1 id="title">Nanaji Deshmukh Krushi Sanjeevani Prakalp</h1>
+                </div>
+            </div>
+        </div>
+        <div class="page-container" style="background-color: rgb(0, 150, 150);">
+            <!-- start sidebar menu -->
+            <div class="sidebar-container">
+                <div class="sidemenu-container navbar-collapse collapse fixed-menu" style="background-color: rgb(0, 150, 150);">
+                    <div id="remove-scroll" class="dbt_point" onload="show_sub()">
+                        <ul class="sidemenu  page-header-fixed sidemenu-closed" data-keep-expanded="false" data-auto-scroll="true" data-slide-speed="200" style="padding-top: 20px">
+                            <li class="sidebar-toggler-wrapper hide">
+                                <div class="sidebar-toggler">
+                                    <span></span>
+                                </div>
+                            </li>
+
+
+
+                            <li class="nav-item">
+                                <a href="map.html" target="_blank" class="nav-link nav-toggle">
+                                    <i class="material-icons">map</i>
+                                    <span class="title" style="color: white;">Create Map </span>
+                                    <span class="arrow "></span>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="soilcard.html" class="nav-link nav-toggle">
+                                    <i class="material-icons">layers</i>
+                                    <span class="title" style="color: white;">Soil Health Card</span>
+                                    <span class="arrow "></span>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="forecast.html" class="nav-link nav-toggle">
+                                    <i class="material-icons">map</i>
+                                    <span class="title" style="color: white;">Forecast </span>
+                                    <span class="arrow "></span>
+                                </a>
+                            </li>
+                        </ul>
+                        </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!-- end sidebar menu -->
+            <!-- start page content -->
+            <div class="page-content-wrapper">
+                <div class="page-content">
+                    <div class="row" style="margin-bottom: -20px;">
+                        <div class="col-sm-12">
+                            <div class="card card-box" style="width:100%; height:80vh;">
+                                <div id="content">
+                                    <div style="width:100%;height:80vh;padding: 0px;" id="map" class="map">
+                                        <div id="popup" class="ol-popup">
+                                            <a href="#" id="popup-closer" class="ol-popup-closer"></a>
+                                            <div id="popup-content">
+
+                                            </div>
+                                        </div>
+                                        <img style="position: absolute;position: absolute;z-index: 500;top: 6%;right: 15%;" src="images/compass.png" height="60" width="60" hidden>
+                                        <img style="position: absolute;position: absolute;z-index: 500;top: 75%;right: 15%;" src="images/pocra.png" height="120" width="120" hidden>
+                                        <div class="box stack-top container" style="position: absolute;position: absolute;z-index: 500;top: 8%;right: 5%;">
+
+                                            <table>
+                                                <tr>
+                                                    <td><img src="legend/0_2.png"> 0 to 2</td>
+                                                </tr>
+                                                <tr>
+                                                    <td><img src="legend/2_4.png"> 2.1 to 4</td>
+                                                </tr>
+                                                <tr>
+                                                    <td><img src="legend/4_6.png"> 4.1 to 6</td>
+                                                </tr>
+                                                <tr>
+                                                    <td><img src="legend/6_10.png"> 6.1 and above</td>
+                                                </tr>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div id="menu">
+                                    <h3>IMD Forecast Data</h3>
+                                    <table>
+                                        <tr>
+                                            <td>
+
+                                                <div role="group" aria-label="Animation controls">
+                                                    <!-- Create slider container -->
+                                                    <div class="slidecontainer">
+                                                        <input type="range" min="0" max="2" value="0" class="slider" id="myRange" oninput="showVal(this.value)" onchange="showVal(this.value)">
+                                                        <p>Date: <span id="date_value"></span></p>
+                                                    </div>
+                                                </div>
+
+                                            </td>
+
+                                        </tr>
+
+                                    </table>
+
+
+                                    <div class="data"></div>
+                                </div>
+                            </div>
+
+
+                            <!-- <div class="options"
+                                    style="position: absolute;position: absolute;z-index: 500;top: 8%;right: 10%;">
+                                    <div >
+                                        <form class="form" hidden>
+                                            <label for="format" hidden>Page size </label>
+                                            <select id="format" hidden>
+                                              <option value="a0">A0 (slow)</option>
+                                              <option value="a1">A1</option>
+                                              <option value="a2">A2</option>
+                                              <option value="a3">A3</option>
+                                              <option value="a4" selected>A4</option>
+                                              <option value="a5">A5 (fast)</option>
+                                            </select>
+                                            <label for="resolution" hidden>Resolution </label>
+                                            <select id="resolution" hidden>
+                                              <option value="72">72 dpi (fast)</option>
+                                              <option value="150">150 dpi</option>
+                                              <option value="300">300 dpi (slow)</option>
+                                            </select>
+                                          </form>
+                                          <button id="export-pdf">Export PDF</button>
+                                    </div>
+                                     <button id="cmd" onclick="CreatePDFfromHTML()" class="btn Print">Print</button> -->
+
+                            <!-- </div> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- end page content -->
+        <!-- start chat sidebar -->
+        <div class="chat-sidebar-container" data-close-on-body-click="false">
+            <div class="chat-sidebar">
+                <ul class="nav nav-tabs">
+                    <li class="nav-item">
+                        <a href="#quick_sidebar_tab_1" class="nav-link active tab-icon" data-toggle="tab"> <i class="icon-settings"></i>Tools
+                            <!--                                    <span class="badge badge-danger"></span>-->
+                        </a>
+                    </li>
+                    <!--                            <li class="nav-item">
+                                    <a href="#quick_sidebar_tab_3" class="nav-link tab-icon"  data-toggle="tab"> <i class="material-icons">settings</i> Search
+                                    </a>
+                                </li>-->
+                </ul>
+                <div class="tab-content">
+                    <!-- Start User Chat -->
+                    <div class="tab-pane active chat-sidebar-chat in active show animated slideInRight" role="tabpanel" id="quick_sidebar_tab_1">
+                        <div class="chat-sidebar-list">
+                            <div class="chat-sidebar-chat-users slimscroll-style" data-rail-color="#ddd" data-wrapper-class="chat-sidebar-list">
+                                <div class="chat-header" hidden="">
+                                    <h5 class="list-heading">BUFFER</h5>
+                                </div>
+                                <ul class="media-list list-items">
+                                    <li class="media"><img class="media-object" src="images/buffer.png" width="35" height="35" alt="...">
+                                        <div class="media-body">
+                                            <h5 class="media-heading" style="padding-top: 10px;font-weight: bold">
+                                                Buffer</h5>
+                                            <div class="media-heading-sub"></div>
+                                        </div>
+                                    </li>
+                                    <li class="media">
+                                        <div class="media-status">
+                                        </div> <img class="media-object" src="images/meas.png" width="40" height="40" alt="...">
+                                        <div class="media-body">
+                                            <h5 class="media-heading" style="padding-top: 10px;font-weight: bold">
+                                                Measurement</h5>
+                                            <div class="media-heading-sub"></div>
+                                        </div>
+                                    </li>
+                                    <li class="media"><img class="media-object" src="images/bookmark.png" width="35" height="35" alt="...">
+                                        <div class="media-body">
+                                            <h5 class="media-heading" style="padding-top: 10px;font-weight: bold">
+                                                Bookmarks</h5>
+                                            <div class="media-heading-sub"></div>
+                                        </div>
+                                    </li>
+                                    <li class="media">
+                                        <div class="media-status">
+                                        </div> <img class="media-object" src="images/identify.png" width="35" height="35" alt="...">
+                                        <div class="media-body">
+                                            <h5 class="media-heading" style="padding-top: 10px;font-weight: bold">
+                                                Identify</h5>
+                                            <div class="media-heading-sub"></div>
+                                        </div>
+                                    </li>
+                                    <li class="media"><img class="media-object" src="images/Query.png" width="35" height="35" alt="...">
+                                        <div class="media-body">
+                                            <h5 class="media-heading" style="padding-top: 10px;font-weight: bold">
+                                                Query Builder</h5>
+                                            <div class="media-heading-sub"></div>position: absolute; z-index: 500; top: 12%; left: 1%;
+                                        </div>
+                                    </li>
+                                    <li class="media"><img class="media-object" src="images/draw.png" width="35" height="35" alt="...">
+                                        <div class="media-body">
+                                            <h5 class="media-heading" style="padding-top: 10px;font-weight: bold">
+                                                Draw</h5>
+                                            <div class="media-heading-sub"></div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="chat-sidebar-item">
+                            <div class="chat-sidebar-chat-user">
+                                <div class="page-quick-sidemenu">
+                                    <a href="javascript:;" class="chat-sidebar-back-to-list">
+                                        <i class="fa fa-angle-double-left"></i>Back
+                                    </a>
+                                </div>
+                                <div class="chat-sidebar-chat-user-messages">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- End User Chat -->
+                    <!-- Start Setting Panel -->
+
+                </div>
+            </div>
+        </div>
+        <!-- end chat sidebar -->
+    </div>
+    <!-- end page container -->
+    <!-- start footer -->
+    <div class="page-footer">
+        <div class="page-footer-inner"> 2021 &copy; PoCRA
+            <!--<a href="mailto:redstartheme@gmail.com" target="_top" class="makerCss">RedStar Theme</a>-->
+        </div>
+        <div class="scroll-to-top">
+            <i class="icon-arrow-up"></i>
+        </div>
+    </div>
+    <!-- end footer -->
+    </div>
+    <script>
+        var coll = document.getElementsByClassName("collapsible");
+        var i;
+
+        for (i = 0; i < coll.length; i++) {
+            coll[i].addEventListener("click", function() {
+                this.classList.toggle("active");
+                var content = this.nextElementSibling;
+                if (content.style.maxHeight) {
+                    content.style.maxHeight = null;
+                } else {
+                    content.style.maxHeight = content.scrollHeight + "px";
+                }
+            });
+        }
+    </script>
+
+    <script src="assets/plugins/jquery/jquery.min.js"></script>
+
+    <script src="assets/plugins/popper/popper.min.js"></script>
+    <script src="assets/plugins/jquery-blockui/jquery.blockui.min.js"></script>
+    <script src="assets/plugins/jquery-slimscroll/jquery.slimscroll.min.js"></script>
+    <!-- bootstrap -->
+    <script src="assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+    <script src="assets/plugins/sparkline/jquery.sparkline.min.js"></script>
+    <script src="assets/js/pages/sparkline/sparkline-data.js"></script>
+    <!-- Common js-->
+    <script src="assets/js/app.js"></script>
+    <script src="assets/js/layout.js"></script>
+    <script src="assets/js/theme-color.js"></script>
+    <!-- material -->
+    <script src="assets/plugins/material/material.min.js"></script>
+    <!-- animation -->
+    <script src="assets/js/pages/ui/animations.js"></script>
+
+    <!-- chart js -->
+    <script src="assets/plugins/chart-js/Chart.bundle.js"></script>
+    <script src="assets/plugins/chart-js/utils.js"></script>
+    <!-- <script src="assets/js/pages/chart/chartjs/home-data.js"></script> -->
+    <!-- summernote -->
+    <script src="assets/plugins/summernote/summernote.min.js"></script>
+    <script src="assets/js/pages/summernote/summernote-data.js"></script>
+    <!-- <script src='libs/v6.0.0-dist/ol.js'></script> -->
+    <!--<script src="js/ol3-layerswitcher.js"></script>-->
+    <!-- Openlayers v6.3.1-->
+    <!--<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.3.1/css/ol.css">-->
+
+    <!-- <script src="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.3.1/build/ol.js"></script> -->
+
+    <!-- ol-layerswitcher -->
+    <script src="https://unpkg.com/ol-layerswitcher@3.5.0"></script>
+    <!--<link rel="stylesheet" href="https://unpkg.com/ol-layerswitcher@3.5.0/src/ol-layerswitcher.css" />-->
+    <script src="https://cdn.maptiler.com/ol-mapbox-style/v4.3.1/olms.js"></script>
+    <script src="js/forecast.js"></script>
+</body>
+
+<!-- Mirrored from radixtouch.in/templates/admin/smile/source/layout_collapse.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 04 Feb 2020 10:58:39 GMT -->
+
+</html>

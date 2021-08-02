@@ -1,0 +1,95 @@
+<html>
+<meta charset="utf-8" />
+<body>
+    <div style='font-size:30px'>
+        <button style='font-size:50px' onclick="jsPDFimages()">create pdf</button>
+    </div>
+</body>
+</html>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.min.js"></script>
+
+<script>
+    var imagesList 
+    const doc = new jsPDF();
+    const imagesWidth = []
+    const imgDataList = []
+    const img = new Image();
+    var ImageToLoad = new Image();
+    function getImageFromUrl(url, callback) {
+
+        ImageToLoad.crossOrigin = "Anonymous";
+
+        ImageToLoad.onError = function () {
+            console.log('Cannot load image: "' + url + '"');
+        };
+
+        ImageToLoad.onload = function () {
+            alert("image is loaded");
+        }
+
+        ImageToLoad.onload = function () {
+            imagesWidth.push({
+                width: ImageToLoad.width,
+                height: ImageToLoad.height
+            })
+            callback(ImageToLoad);
+        };
+        ImageToLoad.src = url;
+        createPDF(ImageToLoad)
+    }
+    function createPDF(imgData) {
+        imgDataList.push(imgData)
+        var pwidth = doc.internal.pageSize.getWidth();
+        var pheight = doc.internal.pageSize.getHeight();
+        var maxWidth = pwidth - 40; // Max width for the image
+        var maxHeight = pheight - 40;    // Max height for the image
+        var ratio = 0;  // Used for aspect ratio
+        var width = imgData.width;    // Current image width
+        var height = imgData.height;  // Current image height
+
+        var xvar=20;
+        var yvar=20;
+        // Check if the current width is larger than the max
+        if (width > maxWidth) {
+            ratio = maxWidth / width;   // get ratio for scaling image
+            // $(this).css("width", maxWidth); // Set new width
+            // $(this).css("height", height * ratio);  // Scale height based on ratio
+            height = height * ratio;    // Reset height to match scaled image
+            width = width * ratio;    // Reset width to match scaled image
+        }
+        // Check if current height is larger than max
+        if (height > maxHeight) {
+            ratio = maxHeight / height; // get ratio for scaling image
+            // $(this).css("height", maxHeight);   // Set new height
+            // $(this).css("width", width * ratio);    // Scale width based on ratio
+            width = width * ratio;    // Reset width to match scaled image
+            height = height * ratio;    // Reset height to match scaled image
+        }
+        
+        if (imgDataList.length !== Object.keys(imagesList).length)
+        yvar=yvar+50;
+        doc.addImage({
+            imageData: imgData,
+            x: xvar,
+            y: yvar,
+            w: 20,
+            h: 20,
+            angle: -20
+        });
+            // doc.addPage();
+        if (imgDataList.length == Object.keys(imagesList).length) {
+            // yvar=yvar+10;
+            doc.save('sample-file.pdf');
+            //window.open(doc.output('bloburl'), '_blank');
+        }
+    }
+
+    function jsPDFimages() {
+
+        
+        imagesList={ "imag1": "http://gis.mahapocra.gov.in/geoserver/wms?REQUEST=GetLegendGraphic&VERSION=1.0.0&FORMAT=image/png&WIDTH=20&HEIGHT=20&LAYER=District", "imag2": "http://gis.mahapocra.gov.in/geoserver/wms?REQUEST=GetLegendGraphic&VERSION=1.0.0&FORMAT=image/png&WIDTH=20&HEIGHT=20&LAYER=Subdivision" }
+        for (var item in imagesList) {
+            getImageFromUrl(imagesList[item], createPDF);
+        }
+    }
+</script>

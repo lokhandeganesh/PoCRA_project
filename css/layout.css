@@ -1,0 +1,1647 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 6 Jun, 2018, 10:14:46 AM
+    Author     : Mohammad Abdul Naved
+*/
+
+html,body{
+    margin: 0px;
+    padding: 0px;
+    overflow: hidden;
+    font-size: 12px;
+    font-family: Arial, Helvetica, sans-serif;
+    /*background-image: url('../images/medasolar.jpg');*/
+    background-size: 100% 100%;
+   
+}
+.divClass {  
+    margin: 0px;
+    padding: 0px;
+    overflow: hidden;
+    font-size: 12px;
+     font-family: Arial, Helvetica, sans-serif;
+} 
+
+
+/**::-webkit-scrollbar { width: 0px; height: 0px; }
+*::-webkit-scrollbar-track { background: #c8c8c8; }
+*::-webkit-scrollbar-thumb { background: #c8c8c8; }
+*:hover::-webkit-scrollbar-thumb { background: #c8c8c8; }            
+*::-webkit-scrollbar-thumb:vertical:hover { background: #c8c8c8; }
+*::-webkit-scrollbar-thumb:horizontal:active,
+*::-webkit-scrollbar-thumb:vertical:active { background: #c8c8c8; }*/
+
+
+
+.header { grid-area: header;height:20px;padding:0px; overflow: hidden;display: grid; grid-template-columns: 1fr 2fr; grid-template-areas:'headleft headcenter headright';background-color: #ffffff;}
+.banner { display: grid; grid-template-columns: 70px auto 170px; grid-template-areas:'lefticon centertext righticon'; grid-area: banner;height:70px;background-color: #009688;  overflow: hidden;}
+.menu { grid-area: menu;height:30px;  overflow: hidden;}
+.main { grid-area: main;height:calc(100vh - 150px); border-top: 2px solid #2e4b90; overflow: scroll;overflow-x: hidden;}
+.right { grid-area: right;height:calc(100vh - 150px);  overflow: scroll;}
+.left { grid-area: left;height:calc(100vh - 150px); overflow: scroll; }
+.footer { grid-area: footer;height:30px;    background-color: #009688;color: white;display: grid; grid-template-columns: 1fr 1fr 1fr; grid-template-areas:'footleft footcenter footright'; overflow: hidden; }
+.lefticon{grid-area: lefticon;text-align: left;float: left;}
+.righticon{grid-area: righticon;text-align: right;float: right;}
+.centertext{grid-area: centertext;}
+.footleft{grid-area: footleft;margin-top: 5px;}
+.footcenter{grid-area: footcenter;}
+.footright{grid-area: footright;text-align: right;vertical-align: central;}
+.headleft{grid-area: headleft;padding-top: 5px;}
+.headright{grid-area: headright;padding-top: 2px;}
+.headcenter{grid-area: headcenter;margin-top: -3px;}
+
+.boxtitle{ grid-area: headright;}
+.maincontainerfull {
+    height: 100vh;
+    width: 100vw;
+    display: grid;
+    grid-template-areas:
+        'header header header header header header'
+        'banner banner banner banner banner banner'
+        'menu menu menu menu menu menu'
+        'main main main main main main'
+        'footer footer footer footer footer footer';
+    grid-gap: 0px;
+
+}
+.maincontainerfull > div {
+    text-align: center;
+}
+
+.maincontainer {
+    height: 100vh;
+    width: 100vw;
+    display: grid;
+    grid-template-areas:
+        'header header header header header header'
+        'banner banner banner banner banner banner'
+        'menu menu menu menu menu menu'
+        'left main main main main right'
+        'footer footer footer footer footer footer';
+    grid-gap: 0px;
+
+}
+.maincontainer > div {
+    text-align: center;
+}
+
+
+.giscontainer{
+    height:calc(100vh - 120px);
+    width: 100vw;
+    display: grid;
+    grid-template-columns: 20vw auto;
+
+}
+.leftcolumn {
+    background-color: #e8e8e8;
+    border-right: thin solid gray;
+    overflow: auto;
+    padding-bottom: 100px;
+    /*background-image: url('../images/dot.png');*/
+}
+
+.rightcolumn {
+    background-color: white;
+    /*grid-template-columns: auto 20vw;*/
+    /*    display: grid;
+        grid-template-columns: auto 20vw;*/
+    /* background-color: red; */
+}
+
+.right_left {
+    grid-column: 1 / 5;
+    grid-row: 1/5;
+    background-color: white;
+
+}
+.right_right {
+    grid-column: 4 ;
+    grid-row: 1 / 5;
+    background-color: #e8e8e8;
+    border-left: thin solid gray;
+}
+.right_bottom {
+    grid-column: 1/5 ;
+    grid-row: 5/6 ;
+    background-color: #f7f7f7;
+    border-top: thin solid gray;
+}
+/*.d {
+    grid-column: 2;
+    grid-row: 2;
+}*/
+
+
+
+/*.headerright{
+    float: right;
+    width:70vw;
+}
+.headerleft{
+    margin-left: 5vw;
+    float: left;
+    width:auto;
+}*/
+.icontext{
+    background: transparent url('http://mrsac.maharashtra.gov.in/MRSAC_FRAMEWORK/iconbank/indianflag.png') no-repeat;
+    background-size: 26px;padding: 2px 0px 2px 30px;
+    text-decoration: none;
+    color: black;
+
+}
+
+
+
+.footer a{
+    text-decoration: none;
+    color: white;
+    cursor: pointer;
+    margin-left: 8px;
+    margin-right: 8px;
+    height: 30px;
+    line-height: 30px;
+}
+
+
+.rowbox1{
+    margin-left: 10%;
+    margin-right: 10%;
+    clear: both;
+    /*background: #2e4b90;*/
+    width: 500px;
+    margin: 0 auto;
+    color: white;
+}
+
+.rowbox{
+    /*    margin-left: 10%;
+        margin-right: 10%;*/
+    clear: both;
+    /*background: #2e4b90;*/
+    padding-top: 1%;
+    padding-left: 8%;
+    /*color: white;*/
+}
+
+
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+
+
+.boxparent {
+    float: left;
+    padding: 0 7px;
+    margin-bottom: 20px;
+    position: relative;
+    width: 250px;
+    height:250px;
+    margin: 1%;
+    border: thin solid #ccc;
+    box-shadow: 0 0 5px 2px #f1f1f1;
+    border-radius: 5px;
+}
+
+.boxabsolute {
+    /*    position: absolute;
+        width: 100%;
+        bottom: 8px;
+        font-size:1.8em*/
+    padding: 5px;
+    position: absolute;
+    width: 96.5%;
+    bottom: 0px;
+    background-color: #9c27b0c9;
+    font-size: 1.8em;
+    margin-left: -7px;
+} 
+
+
+.list-block {
+    float: left;
+    width: 15%;
+    padding: 0 7px;
+    margin-bottom: 20px;
+    width: 300px;
+    height:300px;
+}
+
+
+/*.list-block:hover .detail{
+    opacity: 100;
+    cursor: pointer;
+}*/
+
+.other-schemes .list-block {
+    padding: 0 7px;
+    margin-bottom: 14px;
+    width: 20%;
+}
+
+.scheme-block {
+    position: relative;
+    text-align: center;
+    box-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+    border: 1px solid #dedede;
+    border-radius: 3px;
+    overflow: hidden;
+    background: #fff;
+    padding: 10px;
+    height: 90%;
+    cursor: pointer;
+    color:black;
+    font-size: 1.6em;
+
+}
+/*.scheme-block img{
+    width:30%;
+    cursor: pointer;
+}
+.scheme-block a{
+    text-decoration: none;
+    color:black;
+    cursor: pointer;
+}
+
+.detail {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #2485d4;
+    left: 0px;
+    top: 0px;
+    opacity: 0;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    display: -webkit-flex;
+    cursor: pointer;
+}
+
+.detail-inner {
+    color: #fff;
+    width: 100%;
+}
+.scm-text {
+    padding-bottom: 8px;
+    font-size: 12px;
+}
+
+
+.scheme-block .Count {
+    font-family: 'digital-7regular';
+    font-size: 16px;
+    color: #3779c3;
+}*/
+
+.rowstat{
+    width:100%;
+    background-color: #2e4b90;
+    width: 100%;
+    /*padding-left: 5%;*/
+    /*padding-right: 5%;*/
+    padding-top: 1%;
+    padding-bottom: 2%;
+}
+
+
+
+.boxtitle{
+
+    grid-area: boxtitle;
+}
+.contactleft{
+    grid-area: contactleft;
+}
+
+.contactright{
+    grid-area: contactright;
+}
+
+.bannerright{
+    position: absolute;
+    top:0;
+    left:75%;
+    height:100%;
+    width:25%;
+    text-align: center;
+    /*padding: 20px;*/
+    width:calc(calc(100% - 150px)- 50%);
+    height: calc(100vh - 150px);
+    display: grid;
+    grid-auto-rows: auto;
+
+}
+
+.totmapcount{
+    display: table-cell; vertical-align: middle;
+    font-size: 2em;
+    color: white;
+    margin: 0 auto;
+    width: 35vw;
+
+    background-image: url('http://mrsac.maharashtra.gov.in/MRSAC_FRAMEWORK/iconbank/medasolar/mapcount.png');
+    background-size: 100% 100%;
+
+}
+
+
+.toppie{
+    /*    display: table-cell; vertical-align: middle;
+        color: white;
+        margin: 0 auto;
+        width: 100vw;*/
+
+
+}
+
+
+#totalcount{
+    font-size: 2em;
+    margin-top: 10%;
+}
+
+@media screen and (max-width: 600px) {
+    #totalcount{
+        font-size: 1em;
+    }
+}
+
+
+
+chart{
+    width: 100% !important;
+}
+
+
+.rowbar{
+    width:100%;
+    /*background-color: #2e4b90;*/
+    width: 100%;
+    /*padding-left: 5%;*/
+    /*padding-right: 5%;*/
+    padding-top: 1%;
+    padding-bottom: 2%;
+}
+
+@font-face{
+    font-family:'digital-clock-font';
+    src: url('http://mrsac.maharashtra.gov.in/MRSAC_FRAMEWORK/iconbank/medasolar/font/digital.ttf');
+}
+
+.seperator{
+    width: 100vw;
+    height:25px;
+    background-color: #2e4b90;
+
+}
+
+
+
+
+.outer {
+    width: 100%;
+    text-align: center;
+}
+
+.inner {
+    display: inline-block;
+}
+
+
+
+.contactus{
+    /*margin: auto;*/
+    text-align: center;
+    width: 100%;
+    /*display: flex;*/
+    justify-content: center;
+    align-items: center;
+    /*background-image: url('http://mrsac.maharashtra.gov.in/MRSAC_FRAMEWORK/iconbank/medasolar/contact.jpeg');*/
+    min-height:calc(100vh - 150px);
+}
+
+.contactdiv{
+
+    float: left; 
+    width: 300px;
+    min-height: 150px;
+    border: thin solid gray;
+    border-radius: 3px;
+    padding: 10px;
+    margin: 1%;
+    text-align: left;
+    background-color: #ffffff8f;
+    /*display: inline-block;*/
+}
+
+.contactform{
+    float: left; 
+    border: thin solid gray;
+    border-radius: 3px;
+    padding: 10px;
+    margin: 1%;
+    width:500px;
+    text-align: left;
+    background-color: #ffffff8f;
+}
+.contactform table{
+    width:480px;
+    text-align: left;
+}
+.contactform td{
+    word-wrap:break-word;
+}
+
+/*.parent {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.child {
+  display: inline-block;
+}*/
+
+
+
+
+.aboutus{
+
+    text-align: center;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    min-height:calc(100vh - 150px);
+}
+
+
+
+/*======================================================*/
+
+.regform{
+
+}
+
+select,input[type=text],input[type=password] {
+    width: 95%;
+    /*padding: 6px 10px;*/
+
+}
+
+select,input[type=text],input[type=password],input[type=date]:focus {
+    /*background-color: #eaf5f9;*/
+    outline: none;
+}
+
+input[type=date] {
+    width: 90%;
+    /*padding: 3px 10px;*/
+
+}
+textarea {
+    width: 95%;
+    /*padding: 6px 10px;*/
+
+}
+
+
+/*=============================*/
+
+.btnsave{
+    height: 30px;
+    padding: 6px 16px;
+    border: none;
+    color: white;
+    font-size: 13px;
+    font-weight: 300;
+    cursor: pointer;
+    /*text-shadow: 2px 1px #2f2f2f;*/
+    background-color: #5eca5c;
+    width: 120px;
+    transition: all 0.5s;
+}
+
+
+.btnCheck{
+    height: 30px;
+    padding: 6px 16px;
+    border: none;
+    color: white;
+    font-size: 13px;
+    font-weight: 300;
+    cursor: pointer;
+    /*text-shadow: 2px 1px #2f2f2f;*/
+    background-color: #00BCD4;
+
+}
+
+
+.btnBack{
+    height: 30px;
+    padding: 6px 16px;
+    border: none;
+    color: white;
+    font-size: 13px;
+    font-weight: 300;
+    cursor: pointer;
+    /*text-shadow: 2px 1px #2f2f2f;*/
+    background-color: #00BCD4;
+    width: 120px;
+    transition: all 0.5s;
+}
+
+.btnNext{
+    height: 30px;
+    padding: 6px 16px;
+    border: none;
+    color: white;
+    font-size: 13px;
+    font-weight: 300;
+    cursor: pointer;
+    /*text-shadow: 2px 1px #2f2f2f;*/
+    background-color: #52b5ac;
+    width: 120px;
+}
+
+button:hover{
+    opacity: .8;
+}
+.disabled {
+  opacity: 0.65; 
+  cursor: not-allowed;
+}
+.mandatory{
+    color: red;
+    font-size: large;
+}
+
+
+
+#dh1 {
+    -webkit-transition: width 2s; /* Safari */
+    -webkit-transition-timing-function: linear; /* Safari */
+    transition: width 2s;
+    transition-timing-function: linear;
+}
+
+
+.regtab{
+    display: none;
+}
+
+
+/*-----------------------------------------------*/
+
+
+
+/* Create three equal columns that floats next to each other */
+.column {
+    text-align: left;
+    float: left;
+    width: 30%;
+    padding: 10px;
+    margin: 0.50%;
+    border: thin solid #f1f1f1;
+    background-color: #f1f1f1;
+    min-height: 350px;
+    margin-bottom: 30px;
+    /*height: 300px;  Should be removed. Only for demonstration */
+}
+
+.column a{
+    text-decoration: none;
+    color: black;
+    font-size: 1.2em;
+}
+
+.column a:hover{
+    text-decoration: none;
+    color: blue;
+    font-size: 1.2em;
+}
+
+/* Clear floats after the columns */
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+
+
+/* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+    .column {
+        width: 100%;
+    }
+
+
+}
+
+
+
+/*--------------------Faq-----------------*/
+
+/*Add some spacing*/
+.faq-section{
+    margin: 7px 0;
+    position: relative;
+}
+
+/*Hide the paragraphs*/
+.faq-section p{
+    display: none;
+}   
+
+/*Hide the checkboxes */
+.faq-section input{
+    position: absolute;
+    z-index: 2;
+    cursor: pointer;
+    opacity: 0;         
+    display: none\9; /* IE8 and below */
+    margin: 0;          
+    width: 100%;
+    height: 36px;
+}
+
+/*Show only the clipped intro */
+.faq-section label+p{
+    display: block; 
+    color: #999;
+    font-size: .85em;
+    transition: all .15s ease-out;
+    /* Clipping text */
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;                       
+}
+
+/*If the checkbox is checked, show all paragraphs*/
+.faq-section input[type=checkbox]:checked~p{
+    display: block;
+    color: #444;
+    font-size: 1em;
+    /* restore clipping defaults */
+    text-overflow: clip; 
+    white-space: normal;
+    overflow: visible;  
+}
+
+/*Style the label*/
+.faq-section label{
+    text-align: left;
+    font-size: 1.2em;
+    background: #f1f1f1; 
+    display: block;
+    position: relative;
+    height: 20px;
+    padding: 7px 10px;
+    /*font-weight: bold;*/
+    border: 1px solid #d6d6d6;
+    border-left: 3px solid #afafaf;
+    text-shadow: 0 1px 0 rgba(255,255,255,.5);
+    transition: all .15s ease-out;          
+}
+
+/*Remove text selection when toggle-ing*/
+.faq-section label::selection{
+    background: none;
+}
+
+.faq-section label:hover{
+    background: #d5daea;
+    cursor:pointer;
+}
+
+.faq-section a{
+    text-decoration: none;
+    color:black;
+}
+
+
+/*If the checkbox is checked, style the label accordingly
+.faq-section input[type=checkbox]:checked~label{
+    border-color: #ff7f50;          
+    background: #f5deb4;
+    background-image: linear-gradient(to bottom, #fff, #f5deb4);
+    box-shadow: 0 0 1px rgba(0,0,0,.4);             
+}*/
+
+/*Label's arrow - default state */
+/*.faq-section label::before{
+    content: '';
+    position: absolute;
+    right: 4px;
+    top: 50%;
+    margin-top: -6px;
+    border: 6px solid transparent;
+    border-left-color: inherit; 
+}*/
+
+/*Update the right arrow
+.faq-section input[type=checkbox]:checked~label::before{
+    border: 6px solid transparent;
+    border-top-color: inherit;
+    margin-top: -3px;
+    right: 10px;    
+}*/
+
+
+/*--------------------Faqend-----------------*/
+
+.resize-drag {
+    background-color: #29e;
+    color: white;
+    font-size: 20px;
+    /*font-family: sans-serif;*/
+    border-radius: 8px;
+    padding: 20px;
+    margin: 30px 20px;
+
+    width: 120px;
+
+    /* This makes things *much* easier */
+    box-sizing: border-box;
+}
+
+.resize-container {
+    display: inline-block;
+    width: 100%;
+    height: 540px;
+}
+
+/*#rightleft {
+  display: inline-block;
+  width: 80%;
+  height: 240px;
+}
+
+#rightright {
+  display: inline-block;
+  width: 20%;
+  height: 240px;
+}
+
+#rightbottom {
+  display: inline-block;
+  width: 100%;
+  height: 240px;
+}*/
+
+#giscentercontainer {
+    width: 100%;
+    height: 100%;
+
+}
+#left_panel {
+    position: absolute;
+    left: 0;
+    /*top: 0;*/
+    /*bottom: 0;*/
+    right: 0; 
+    /*20%;*/
+    height: 100%;
+    /*background: grey;*/
+    min-width: 50%;
+
+}
+
+#right_panel {
+    position: absolute;
+    right: 0;
+    /*top: 0;*/
+    /*bottom: 0;*/
+    width: 20%;
+    height: 100%;
+    background: black;
+    min-width: 5%;
+    max-width: 50%;
+    border-left: thin solid gray;
+}
+
+
+#bottom_panel {
+    position: absolute;
+    left: 20%;
+    right: 0;
+    /* top: 0; */
+    bottom: 20px;
+    width: 100%;
+    color: #fff;
+    height: 20%;
+    /*background: green;*/
+    min-height: 50px;
+}
+
+#drag {
+    position: absolute;
+    left: -4px;
+    top: 0;
+    bottom: 0;
+    width: 8px;
+    cursor: w-resize;
+}
+
+#drag1 {
+    position: absolute;
+    top: -8px;
+    /* top: 0; */
+    /* bottom: 0; */
+    width: 100%;
+    height: 8px;
+    cursor: n-resize;
+    /*background-color: red;*/
+}
+
+
+#divup{
+    position:relative;
+    float:left;
+    height:75%;
+    width:100%;
+    max-height: 95%;
+    /*background-color:#A2A;*/
+    border-bottom: thin solid gray;
+}
+#divdown{
+    position:relative;
+    float:left;
+    height:25%;
+    width:100%;
+    min-height: 5%;
+    /*background-color:#BBB;*/
+}
+
+
+/*-----------------------------------------------------*/
+
+
+
+.collapsible {
+    background-color: #009688;
+    color: white;
+    cursor: pointer;
+    padding: 8px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 12px;
+}
+
+.active, .collapsible:hover {
+    background-color: #009688;
+}
+
+.collapsible:after {
+    content: '\002B';
+    color: white;
+    font-weight: bold;
+    float: right;
+    margin-left: 5px;
+}
+
+.active:after {
+    content: "\2212";
+}
+
+.mcontent {
+
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+    background-color: #efefef;
+    /*    padding-top: 5px;*/
+    border-bottom: thin solid white;
+    padding-left: 10px;
+    padding-right: 10px;
+    text-align: left;
+}
+
+
+
+
+hlabel{
+    width:95%;
+    height: 25px;
+    font-size: 12px;
+    padding: 3px;
+    margin-left: 10px;
+    margin-right: 20px;
+    margin-top: 5px;
+    font-weight: 600;
+}
+mlabel{
+    width:95%;
+    height: 25px;
+    font-size: 12px;
+    padding: 3px;
+    margin-left: 10px;
+    margin-right: 20px;
+    margin-top: 5px;
+
+}
+
+label1{
+    width: 95%;
+    /*height: 25px;*/
+    font-size: 12px;
+    padding: 3px;
+    margin-left: 10px;
+    margin-right: 20px;
+    display: block;
+    /*border-bottom: thin solid white;*/
+}
+
+select{
+    width:95%;
+    height: 25px;
+    font-size: 12px;
+    padding: 3px;
+    /*    margin-left: 10px;
+        margin-right: 20px;*/
+}
+
+
+
+input{
+    width:95%;
+    /*height: 25px;*/
+    font-size: 12px;
+    padding: 3px;
+    /*    margin-left: 10px;
+        margin-right: 20px;*/
+}
+
+
+.btnView{
+    border: thin groove white;
+    /* margin-top: 10px; */
+    color: white;
+    width:100px;
+    background-color: #009688;
+    height: 25px;
+    font-size: 12px;
+    padding: 3px;
+    margin-left: 10px;
+    margin-right: 7px;
+    float:right;
+    margin-bottom: 1%;
+}
+
+.txtcount{
+    float: right;
+    font-size: 14px;
+    font-weight: 600;
+    /* margin-right: 20px; */
+    /* border: thin groove white; */
+    /* border-radius: 25px; */
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 3px;
+    padding-bottom: 2px;
+    background-color: #ffffff;
+    color: #3F51B5;
+    cursor: pointer;
+    width: 70px;
+    /* margin-top: -1px; */
+    text-align: right;
+    /*    float: right;
+        font-size: 14px;
+        font-weight: 600;
+         margin-right: 20px; 
+        border: thin groove white;
+         border-radius: 25px; 
+        padding-left: 10px;
+        padding-right: 10px;
+        padding-top: 5px;
+        padding-bottom: 2px;
+        background-color: #ffffff;
+        color: #3F51B5;
+        cursor: pointer;
+        width: 55px;
+        margin-top: -5px;
+        text-align: right;*/
+}
+
+.txtcount a{
+    text-decoration: none;
+}
+
+
+.listcount{
+    padding-top: 4px;
+    display: grid;
+    grid-template-areas: "lbl" "txtcount";
+    grid-template-columns: 4fr 1fr;
+    margin: 1px;
+
+}
+
+
+/*=====================================================*/
+
+
+
+
+
+.spinner {
+    z-index: 9999999999;
+    position: absolute;
+    top:40%;
+    left:45%;
+    border: 6px solid #f3f3f3;
+    border-radius: 50%;
+    border-top: 6px solid #3498db;
+    width: 50px;
+    height: 50px;
+    -webkit-animation: spin 2s linear infinite; /* Safari */
+    animation: spin 2s linear infinite;
+}
+
+/* Safari */
+@-webkit-keyframes spin {
+    0% { -webkit-transform: rotate(0deg); }
+    100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+
+.ui-resizable-handle.ui-resizable-e{background:red;width:3px;}
+
+.ui-resizable{border:red solid 1px;width:200px}
+
+.dragableheader{
+    padding: 5px;
+    height: 25px;
+    background-color: #009688;
+    cursor: move;
+}
+
+.dragableheader img{
+    margin-bottom: 50%;
+}
+
+.divCollector{
+    background-color: #f1f1f1;
+    width:calc(20% - 2px);
+    height:30px;
+    padding: 1px;
+    position: absolute;
+    left:0;
+    top: calc(100vh - 60px);
+    /*z-index: 99999999;*/
+    border-top: thin solid gray;
+}
+
+.divCollector div{
+    height: 29px;
+    width: 50%;
+    float: left;
+    padding: 5px;
+    /* margin-left: 5px; */
+    background: rgb(197, 228, 198);
+    /* border-radius: 2px; */
+    /* margin-top: 1px; */
+    cursor: pointer;
+    /*border-left: thin solid gray;*/
+}
+.opencontainer{
+    resize: both;
+    overflow: auto;
+    position: absolute;
+    top: calc(100vh - 330px);
+    left:20vw;
+    height:300px;
+    width:80%;
+    background-color: #ffffff;
+    border: thin solid #c3c2c2;
+    display: block;
+
+}
+
+.closecontainer{
+    position: absolute;
+    bottom: -20px;
+    left:-20px;
+    height:0%;
+    width:0px;
+    background-color: white;
+    display: none;
+}
+
+
+.opencontainera{
+    resize: both;
+    overflow: auto;
+    position: absolute;
+    right: 0.5%;
+    top:95px;
+    height:calc(100% - 60%);
+    width:40%;
+    background-color: white;
+    /*    background-color: #ffffffe0;*/
+    border: thin solid #c3c2c2;
+    display: block;
+
+}
+.closecontainera{
+    position: absolute;
+    bottom: -20px;
+    left:-20px;
+    height:0%;
+    width:0px;
+    background-color: #ffffff;
+    display: none;
+}
+
+.close{
+    float: right;
+
+
+}
+
+
+.unselectable {
+    -moz-user-select: -moz-none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+}
+
+
+/**::-webkit-scrollbar { width: 10px; height: 10px; }*/
+*::-webkit-scrollbar-track { background: #c8c8c8;width: 10px; }
+*::-webkit-scrollbar-thumb { background: #c8c8c8; width: 10px;}
+*:hover::-webkit-scrollbar-thumb { background: #c8c8c8; }            
+*::-webkit-scrollbar-thumb:vertical:hover { background: #c8c8c8;width: 10px; }
+*::-webkit-scrollbar-thumb:horizontal:active,
+*::-webkit-scrollbar-thumb:vertical:active { background: #c8c8c8;width: 10px; }
+
+
+
+/*=====================================================*/
+
+.parallax {
+    background-image: url('http://mrsac.maharashtra.gov.in/MRSAC_FRAMEWORK/iconbank/medasolar/slide6.png');
+    height: 100%; 
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+/* Turn off parallax scrolling for tablets and phones. Increase the pixels if needed */
+@media only screen and (max-device-width: 1366px) {
+    .parallax {
+        background-attachment: scroll;
+    }
+}
+
+/*-----------------------------------------------*/
+
+.floatingdiv {
+    display: none;
+    background: #009688;
+    padding: 5px;
+    width: 200px;
+    height: 200px;
+    z-index: 100;
+    position: fixed;
+    top: 150px;
+    right: 0px;
+    -webkit-transition: opacity 600ms, visibility 600ms;
+    transition: opacity 600ms, visibility 600ms;
+}
+
+
+
+
+.slidebutton{
+    display: none;
+    position: absolute;
+    top: 150px;
+    right: 210px;
+    width: 19px;
+    height: 19px;
+    background-color: red;
+}
+
+
+
+
+.infoTable {
+    /*font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;*/
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.infoTable  td, .infoTable th {
+    border: 1px solid #ddd;
+    padding: 4px;
+}
+
+.infoTable  tr:nth-child(even){background-color: #f9f9f9;}
+
+.infoTable  tr:hover {background-color: #e2f1fa;}
+
+.infoTable  th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #4CAF50;
+    color: white;
+}
+
+/*-------------------------------------------------*/
+/*
+table.gradienttable th {
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d5e3e4', endColorstr='#b3c8cc',GradientType=0 );
+    position: relative;
+    z-index: -1;
+}
+table.gradienttable td {
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ebecda', endColorstr='#ceceb7',GradientType=0 );
+    position: relative;
+    z-index: -1;
+}
+table.gradienttable {
+    font-family: verdana,arial,sans-serif;
+    font-size:11px;
+    color:#333333;
+    border-width: 1px;
+    border-color: #999999;
+    border-collapse: collapse;
+}
+table.gradienttable th {
+    padding: 0px;
+    background: #d5e3e4;
+    background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2Q1ZTNlNCIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjQwJSIgc3RvcC1jb2xvcj0iI2NjZGVlMCIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNiM2M4Y2MiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+    background: -moz-linear-gradient(top,  #d5e3e4 0%, #ccdee0 40%, #b3c8cc 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#d5e3e4), color-stop(40%,#ccdee0), color-stop(100%,#b3c8cc));
+    background: -webkit-linear-gradient(top,  #d5e3e4 0%,#ccdee0 40%,#b3c8cc 100%);
+    background: -o-linear-gradient(top,  #d5e3e4 0%,#ccdee0 40%,#b3c8cc 100%);
+    background: -ms-linear-gradient(top,  #d5e3e4 0%,#ccdee0 40%,#b3c8cc 100%);
+    background: linear-gradient(to bottom,  #d5e3e4 0%,#ccdee0 40%,#b3c8cc 100%);
+    border: 1px solid #999999;
+}
+table.gradienttable td {
+    padding: 0px;
+    background: #ebecda;
+    background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2ViZWNkYSIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjQwJSIgc3RvcC1jb2xvcj0iI2UwZTBjNiIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNjZWNlYjciIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+    background: -moz-linear-gradient(top,  #ebecda 0%, #e0e0c6 40%, #ceceb7 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ebecda), color-stop(40%,#e0e0c6), color-stop(100%,#ceceb7));
+    background: -webkit-linear-gradient(top,  #ebecda 0%,#e0e0c6 40%,#ceceb7 100%);
+    background: -o-linear-gradient(top,  #ebecda 0%,#e0e0c6 40%,#ceceb7 100%);
+    background: -ms-linear-gradient(top,  #ebecda 0%,#e0e0c6 40%,#ceceb7 100%);
+    background: linear-gradient(to bottom,  #ebecda 0%,#e0e0c6 40%,#ceceb7 100%);
+    border: 1px solid #999999;
+}
+table.gradienttable th p{
+    margin:0px;
+    padding:8px;
+    border-top: 1px solid #eefafc;
+    border-bottom:0px;
+    border-left: 1px solid #eefafc;
+    border-right:0px;
+}
+table.gradienttable td p{
+    margin:0px;
+    padding:8px;
+    border-top: 1px solid #fcfdec;
+    border-bottom:0px;
+    border-left: 1px solid #fcfdec;;
+    border-right:0px;
+}
+*/
+.downtitle{
+    /*width: 100%;*/
+    padding: 5px;
+    font-size: 1.2em;
+    font-weight: 600;
+    background-color: #ced4f3;
+}
+
+
+.downlist{
+    border-bottom: thin solid #e4e4e4;
+    margin-right: 10px;
+    padding: 5px;
+}
+
+
+.borderDiv{
+    position: relative;
+    padding: 10px;
+    border: thin solid Gray;
+    border-radius: 3px;
+    background-color: #f5f7fb;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    /* padding-bottom: 1%;; */
+}
+
+.borderTitle{
+    padding-left: 5px;
+    padding-right: 5px;
+    position: absolute;
+    margin-top: -18px;
+    margin-left: 10px;
+    background-color: #d0e4fd;
+    color: black;
+    border: thin solid gray;
+    border-radius: 10px;
+}
+
+p a{
+    font-weight: 600;
+    text-decoration: none;
+    color: #29e;
+}
+p {
+font-size: 1.2em;
+line-height: 1.3em;
+margin: 0.625em 0;
+text-align: justify;
+}
+
+p + p {
+text-indent: 1em;
+}
+p:first-letter {
+/*font-size: 1.5em;*/
+line-height: 1em;
+}
+p + p:first-letter {
+font-size: 1em;
+line-height: 1.25em;
+}
+
+/*hr.style-eight {
+    overflow: visible; 
+    padding: 0;
+    border: none;
+    border-top: medium double #333;
+    color: #333;
+    text-align: center;
+}
+hr.style-eight:after {
+    content: "ยง";
+    display: inline-block;
+    position: relative;
+    top: -0.7em;
+    font-size: 1.5em;
+    padding: 0 0.25em;
+    background: white;
+}
+
+*/
+
+/*---------------------------------------------------*/
+
+
+.transition, p, ul li i:before, ul li i:after {
+  transition: all 0.25s ease-in-out;
+}
+
+.flipIn, h1, ul li {
+  animation: flipdown 0.5s ease both;
+}
+
+.no-select, h2 {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+
+
+
+
+.ulacc {
+  list-style: none;
+  perspective: 900;
+  padding: 0;
+  margin: 0;
+}
+.ulacc li {
+    text-align: left;
+    position: relative;
+    padding: 10px 0px 0px 10px;
+    border-top: 1px dotted #dce7eb;
+    /*background-color: #f1f1f1;*/
+    margin: 5px;
+    border: 1px solid #d6d6d6;
+    border-left: 3px solid #afafaf;
+/*  position: relative;
+  padding: 0;
+  margin: 0;
+  padding-bottom: 4px;
+  padding-top: 18px;
+padding:10px 0px 0px 0px;
+  border-top: 1px dotted #dce7eb;*/
+}
+.ulacc li:nth-of-type(1) {
+  animation-delay: 0.5s;
+}
+.ulacc li:nth-of-type(2) {
+  animation-delay: 0.75s;
+}
+.ulacc li:nth-of-type(3) {
+  animation-delay: 1s;
+}
+.ulacc li:last-of-type {
+  padding-bottom: 0;
+}
+.ulacc li i {
+  position: absolute;
+  transform: translate(-6px, 0);
+  margin-top: 6px;
+  right: 20px;
+}
+.ulacc li i:before, .ulacc li i:after {
+  content: "";
+  position: absolute;
+  background-color: #ff6873;
+  width: 3px;
+  height: 9px;
+}
+.ulacc li i:before {
+  transform: translate(-2px, 0) rotate(45deg);
+}
+.ulacc li i:after {
+  transform: translate(2px, 0) rotate(-45deg);
+}
+.ulacc li input[type=checkbox] {
+  position: absolute;
+  cursor: pointer;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  opacity: 0;
+}
+.ulacc li input[type=checkbox]:checked ~ p {
+  margin-top: 0;
+  max-height: 0;
+  opacity: 0;
+  transform: translate(0, 50%);
+}
+.ulacc li input[type=checkbox]:checked ~ i:before {
+  transform: translate(2px, 0) rotate(45deg);
+}
+.ulacc li input[type=checkbox]:checked ~ i:after {
+  transform: translate(-2px, 0) rotate(-45deg);
+}
+
+@keyframes flipdown {
+  0% {
+    opacity: 0;
+    transform-origin: top center;
+    transform: rotateX(-90deg);
+  }
+  5% {
+    opacity: 1;
+  }
+  80% {
+    transform: rotateX(8deg);
+  }
+  83% {
+    transform: rotateX(6deg);
+  }
+  92% {
+    transform: rotateX(-3deg);
+  }
+  100% {
+    transform-origin: top center;
+    transform: rotateX(0deg);
+  }
+}
+
+.pacc{
+    background: white;
+    margin-right: 10px;
+    /* border-top: thin solid gray; */
+    background-color: #f1f1f1;
+    padding-left: 10px;
+/*    background: white;
+    margin-right: 10px;
+    border-top: thin solid gray;*/
+}
+
+
+#rollerContainer{
+    z-index: 9999999999;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #5a5a5a99;
+
+}
+
+.lds-roller {
+    display: inline-block;
+    position: relative;
+    width: 64px;
+    height: 64px;
+    top: 45%;
+    /*left:45%;*/
+}
+.lds-roller div {
+    animation: lds-roller 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+    transform-origin: 32px 32px;
+}
+.lds-roller div:after {
+    content: " ";
+    display: block;
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #fff;
+    margin: -3px 0 0 -3px;
+}
+.lds-roller div:nth-child(1) {
+    animation-delay: -0.036s;
+}
+.lds-roller div:nth-child(1):after {
+    top: 50px;
+    left: 50px;
+}
+.lds-roller div:nth-child(2) {
+    animation-delay: -0.072s;
+}
+.lds-roller div:nth-child(2):after {
+    top: 54px;
+    left: 45px;
+}
+.lds-roller div:nth-child(3) {
+    animation-delay: -0.108s;
+}
+.lds-roller div:nth-child(3):after {
+    top: 57px;
+    left: 39px;
+}
+.lds-roller div:nth-child(4) {
+    animation-delay: -0.144s;
+}
+.lds-roller div:nth-child(4):after {
+    top: 58px;
+    left: 32px;
+}
+.lds-roller div:nth-child(5) {
+    animation-delay: -0.18s;
+}
+.lds-roller div:nth-child(5):after {
+    top: 57px;
+    left: 25px;
+}
+.lds-roller div:nth-child(6) {
+    animation-delay: -0.216s;
+}
+.lds-roller div:nth-child(6):after {
+    top: 54px;
+    left: 19px;
+}
+.lds-roller div:nth-child(7) {
+    animation-delay: -0.252s;
+}
+.lds-roller div:nth-child(7):after {
+    top: 50px;
+    left: 14px;
+}
+.lds-roller div:nth-child(8) {
+    animation-delay: -0.288s;
+}
+.lds-roller div:nth-child(8):after {
+    top: 45px;
+    left: 10px;
+}
+@keyframes lds-roller {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
