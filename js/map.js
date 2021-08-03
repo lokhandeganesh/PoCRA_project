@@ -497,9 +497,9 @@ function checkboxevt(val) {
     }
 
 }
-
+var layer;
 function addRasterLayer(lName, type) {
-    var layer;
+    
     var district = document.getElementById("district").value;
     var subdivision = document.getElementById("division").value;
     var taluka = document.getElementById("taluka").value;
@@ -1634,7 +1634,7 @@ function legend() {
         maplist.push(map.getLayers().item(i).get('title'))
 
     }
-    console.log(maplist.length)
+    console.log(maplist)
 
 
 
