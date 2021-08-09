@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PoCRA Gis</title>
+    <style>
+        @media screen and (max-width: 700px) {
+            #title {
+                font-size: 18px !important;
+            }
+            #title-grid {
+                margin: 1% 30%;
+                position: absolute;
+                top: 12px;
+            }
+            .logo-default {
+                display: none;
+            }
+        }
+        
+        .myheader {
+            position: absolute;
+            background: green;
+            left: 0px;
+            width: 100%;
+            height: 65px;
+            z-index: 1;
+            top: 0;
+        }
+        
+        .proTitle {
+            font-size: 2em;
+        }
+    </style>
+</head>
+<body class="page-header-fixed sidemenu-closed-hidelogo page-content-white page-md header-white sidemenu-closed dark-sidebar-color logo-dark">
+    <div class="page-wrapper">
+        <div class="page-header navbar navbar-fixed-top" style="background-color: rgb(0, 150, 150);">
+            <div class="page-header-inner">
+                <div class="page-logo" style="background-color: rgb(0, 150, 150);">
+                    <a href="index.html">
+                        <img alt="" src="./images/pocra.png" height="50" width="50">
+                        <span class="logo-default" style="color: white;">PoCRA</span> </a>
+                </div>
+                <ul class="nav navbar-nav navbar-left in">
+                    <li><a href="#" class="menu-toggler sidebar-toggler"><i class="icon-menu"></i></a></li>
+                </ul>
+                <a href="javascript:;" class="menu-toggler responsive-toggler" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span></span>
+                </a>
+                <div class="top-menu">
+                    <ul class="nav navbar-nav pull-right">
+                        <li class="dropdown dropdown-quick-sidebar-toggler">
+                            <img src="https://mahapocra.gov.in/assets/images/emblum.png" style=" float: right;height: 55px;width: 55px; ">
+                            <img src="https://mahapocra.gov.in/assets/images/logo.png" style=" float: right;height: 55px;width: 55px;">
+                        </li>
+                    </ul>
+                </div>
+                <div id="title-grid" style="margin-top: 1%;">
+                    <h1 id="title">नानाजी देशमुख कृषि संजीवनी प्रकल्प</h1>
+                </div>
+            </div>
+        </div>
+        <div class="page-container" style="background-color: rgb(0, 150, 150);">
+            <!-- start sidebar menu -->
+            <div class="sidebar-container">
+                <div class="sidemenu-container navbar-collapse collapse fixed-menu" style="background-color: rgb(0, 150, 150);">
+                    <div id="remove-scroll" class="dbt_point" onload="show_sub()">
+                        <ul class="sidemenu  page-header-fixed sidemenu-closed" data-keep-expanded="false" data-auto-scroll="true" data-slide-speed="200" style="padding-top: 20px">
+                            <li class="nav-item">
+                                <a href="http://gis.mahapocra.gov.in/dashboard_handover/" target="_blank" class="nav-link nav-toggle">
+                                    <i class="material-icons">ac_unit</i>
+                                    <span class="title" style="color: white;">जीआयएस डॅशबोर्ड </span>
+                                    <span class="arrow "></span>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="soilcard.html" class="nav-link nav-toggle">
+                                    <i class="material-icons">assignment</i>
+                                    <span class="title" style="color: white;">मृदा आरोग्य पत्रिका </span>
+                                    <span class="arrow "></span>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="map.html" class="nav-link nav-toggle">
+                                    <i class="material-icons">public</i>
+                                    <span class="title" style="color: white;">माझे गाव माझा नकाशा </span>
+                                    <!-- <span class="arrow "></span> -->
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="forecast.html" class="nav-link nav-toggle">
+                                    <i class="material-icons">ac_unit</i>
+                                    <span class="title" style="color: white;">हवामान अंदाज </span>
+                                    <!-- <span class="arrow "></span> -->
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="dbt.html" class="nav-link nav-toggle">
+                                    <i class="material-icons">account_balance</i>
+                                    <span class="title" style="color: white;">Direct Benefite Transfer </span>
+                                    <!-- <span class="arrow "></span> -->
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+</body>
+</html>
