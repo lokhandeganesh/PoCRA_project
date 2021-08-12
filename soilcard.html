@@ -32,53 +32,53 @@
             display: inline-block;
             font-size: 8px;
         }
-        
+
         .shctable {
             width: 100%;
             font-size: 10px;
             border: 1px solid black;
         }
-        
+
         .shcheader {
             width: 100%;
             text-align: center;
             font-size: 12px;
             background-color: #eba834
         }
-        
+
         .shctblheader {
             width: 100%;
             text-align: center;
             font-size: 12px;
             background-color: #ffdd00;
         }
-        
+
         .shcfarmertd {
             text-align: left;
             font-size: 12px;
             background-color: #e6e5df;
         }
-        
+
         .shcth {
             text-align: left;
             font-size: 12px;
             background-color: #85c505;
         }
-        
+
         #wms_layers_btn {
             position: absolute;
             z-index: 500;
             top: 12%;
             left: 1%;
         }
-        
+
         #wms_layers_btn1 {
             position: absolute;
             z-index: 500;
             top: 12%;
             right: 1%;
         }
-        
+
         .box {
             width: 10%;
             height: 100%;
@@ -88,7 +88,7 @@
             opacity: 1;
             /* for demo purpose  */
         }
-        
+
         .formbox {
             width: 80%;
             height: 10%;
@@ -98,15 +98,16 @@
             /* opacity: 1; */
             /* for demo purpose  */
         }
-        
+
         .stack-top {
             z-index: 9;
             margin: 0.5%;
             /* right: 1%; */
             /* for demo purpose  */
         }
+
         /* The Modal (background) */
-        
+
         .modal {
             display: none;
             /* Hidden by default */
@@ -123,8 +124,9 @@
             /* background-color: rgb(0,0,0); Fallback color */
             /* background-color: rgba(0,0,0,0.4); Black w/ opacity */
         }
+
         /* Modal Content/Box */
-        
+
         .modal-content {
             /* background-color: #fefefe; */
             margin: 15% auto;
@@ -134,15 +136,16 @@
             width: 35%;
             /* Could be more or less, depending on screen size */
         }
+
         /* The Close Button */
-        
+
         .close {
             color: #aaa;
             float: right;
             font-size: 28px;
             font-weight: bold;
         }
-        
+
         .close:hover,
         .close:focus {
             color: black;
@@ -162,12 +165,12 @@
             outline: none;
             font-size: 15px;
         }
-        
+
         .active,
         .collapsible:hover {
             background-color: #555;
         }
-        
+
         .collapsible:after {
             content: '\002B';
             color: white;
@@ -175,11 +178,11 @@
             float: right;
             margin-left: 5px;
         }
-        
+
         .active:after {
             content: "\2212";
         }
-        
+
         .content {
             padding: 0 18px;
             max-height: 0;
@@ -188,11 +191,11 @@
             background-color: #f1f1f1;
             /*               max-height: 130px; */
         }
-        
+
         #layertree li>span {
             cursor: pointer;
         }
-        
+
         .header-grid {
             grid-area: header_grid;
             align-self: stretch;
@@ -211,7 +214,7 @@
             grid-template-areas: "logo_grid title_grid";
             /* site_search_grid login_button_grid";*/
         }
-        
+
         #logo-grid {
             grid-area: logo_grid;
             align-self: stretch;
@@ -222,7 +225,7 @@
             grid-template-areas: "logo";
             /*background: rgb(200, 200, 200);*/
         }
-        
+
         #logo {
             grid-area: logo;
             margin: 0;
@@ -230,7 +233,7 @@
             font-weight: bold;
             /*font-color: rgba(255, 0, 0, 0);*/
         }
-        
+
         #title-grid {
             grid-area: title_grid;
             align-self: stretch;
@@ -240,7 +243,7 @@
             display: grid;
             grid-template-areas: "title";
         }
-        
+
         #title {
             grid-area: title;
             margin: 0;
@@ -252,7 +255,7 @@
             color: rgba(255, 255, 255);
             text-shadow: 0 0 3px black, 0 0 1px black, 0 0 1px black, 0 0 1px black;
         }
-        
+
         #site-search-grid {
             grid-area: site_search_grid;
             align-self: stretch;
@@ -261,7 +264,7 @@
             display: grid;
             grid-template-areas: "site_search_input";
         }
-        
+
         #site-search-input {
             grid-area: site_search_input;
             width: 100%;
@@ -271,7 +274,7 @@
             /*border: 0px;*/
             box-sizing: border-box;
         }
-        
+
         #login-button-grid {
             grid-area: login_button_grid;
             align-self: stretch;
@@ -279,23 +282,23 @@
             display: grid;
             grid-template-areas: 'login_button_text';
         }
-        
+
         #login-button-text {
             grid-area: login_button_text;
             align-self: center;
             justify-self: center;
             font-size: 1.25em;
         }
-        
+
         #login-button-grid:hover {
             cursor: pointer;
             background-color: rgba(0, 0, 255, 0.15);
         }
-        
+
         .ol-legend {
             background: rgb(224, 245, 245);
         }
-        
+
         .ol-legend:hover {
             background: rgb(226, 223, 223);
         }
@@ -303,122 +306,126 @@
 
     <style>
         /* popup style */
-        
+
         .ol-popup {
             max-width: 300px;
             min-width: 100px;
             min-height: 1em;
         }
+
         /* Image on popup */
-        
+
         .ol-popup img {
             float: left;
             margin: 0 0.5em 0 0;
             max-width: 100px;
             max-height: 100px;
         }
+
         /* no image content tooltips */
-        
+
         .ol-popup.tooltips img {
             display: none;
         }
+
         /* Custom orange style (tips) */
-        
+
         .ol-popup.tips.orange {
             border-color: #da7;
             background-color: #eca;
         }
-        
+
         .ol-popup.tips.orange .anchor::before {
             border-color: #da7 transparent;
         }
-        
+
         .ol-popup-middle.tips.orange .anchor::before {
             border-color: transparent #da7;
         }
+
         /* orange style (default) */
-        
+
         .ol-popup.default.orange {
             border: 4px solid #f96;
         }
-        
+
         .ol-popup.default.orange .anchor {
             margin: -15px 18px;
         }
-        
+
         .ol-popup.default.orange .anchor::after {
             margin: 6px
-            /*border:4 +2 px */
-            -9px;
+                /*border:4 +2 px */
+                -9px;
         }
-        
+
         .ol-popup-middle.default.orange .anchor::after {
             margin: -9px 6px
-            /*border:4 +2 px */
+                /*border:4 +2 px */
             ;
         }
-        
+
         .ol-popup.default.orange .anchor::before {
             border-color: #f96 transparent;
         }
-        
+
         .ol-popup-middle.default.orange .anchor::before {
             border-color: transparent #da7;
         }
-        
+
         .ol-popup.default.orange .closeBox {
             background-color: rgba(255, 153, 102, 0.7);
         }
-        
+
         .ol-popup.default.orange .closeBox:hover {
             background-color: rgba(255, 153, 102, 1);
         }
-        
+
         .modal {
             overflow: hidden;
         }
-        
+
         .modal-dialog {
             height: 300px;
         }
-        
+
         .modal-header {
             height: 30px;
             padding: 20px;
             background-color: #18456b;
             color: white;
         }
-        
+
         .modal-title {
             margin-top: -10px;
             font-size: 16px;
         }
-        
+
         .modal-header .close {
             margin-top: -10px;
             color: #fff;
         }
-        
+
         .modal-body {
             color: #888;
             padding: 5px 35px 20px;
         }
-        
+
         .modal-body h3 {
             text-align: center;
         }
-        
+
         .modal-body p {
             padding-top: 10px;
             font-size: 1.1em;
         }
-        
+
         #shcfarmerdetails table,
         th,
         td {
             border: 1px solid black;
         }
-        
+
         .ajax-loader {
             visibility: hidden;
             background-color: rgba(255, 255, 255, 0.7);
@@ -427,21 +434,21 @@
             width: 100%;
             height: 100%;
         }
-        
+
         .ajax-loader img {
             position: relative;
             top: 50%;
             left: 50%;
         }
-        
+
         .desk {
             display: block;
         }
-        
+
         .div-only-mobile {
             display: none;
         }
-        
+
         .locbutton {
             position: absolute;
             z-index: 9;
@@ -452,23 +459,26 @@
             /* width: 100%; */
             top: 22%;
         }
-        
+
         @media screen and (max-width: 1000px) {
             .div-only-mobile {
                 display: none;
             }
         }
-        
+
         @media screen and (max-width: 700px) {
             .desk {
                 display: none;
             }
+
             .div-only-mobile {
                 display: block;
             }
+
             .map {
                 height: 50vh
             }
+
             .locbutton {
                 position: absolute;
                 z-index: 9;
@@ -499,7 +509,8 @@
     <!-- ol-ext maki and fontawesome defintions used in fontsymbol -->
     <script type="text/javascript" src="olcss/FontAwesomeDef.js"></script>
     <!-- The line below is only needed for old environments like Internet Explorer and Android 4.x -->
-    <script src="https://cdn.polyfill.io/v3/polyfill.min.js?features=fetch,requestAnimationFrame,Element.prototype.classList,URL,TextDecoder"></script>
+    <script
+        src="https://cdn.polyfill.io/v3/polyfill.min.js?features=fetch,requestAnimationFrame,Element.prototype.classList,URL,TextDecoder"></script>
     <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.5/jspdf.min.js"></script> -->
 
     <style>
@@ -514,63 +525,66 @@
             display: block;
             height: max-content;
         }
+
         /* style the close box */
-        
+
         .ol-overlay.menu .ol-closebox {
             color: #369;
             left: 1em;
             top: 0.5em;
         }
-        
+
         .ol-overlay.menu .ol-closebox:before {
             content: "\f0c9";
             font-family: FontAwesome;
         }
-        
+
         #menu {
             padding-top: 1.5em;
             font-size: 0.9em;
         }
+
         /* menu button */
-        
+
         .ol-control.menu {
             top: 0.5em;
             left: 0.5em;
         }
-        
+
         .ol-control.menu i {
             color: #fff;
         }
-        
+
         .ol-zoom {
             left: auto;
             right: 0.5em;
         }
-        
+
         .ol-rotate {
             right: 3em;
         }
-        
+
         .ol-touch .ol-rotate {
             right: 3.5em;
         }
+
         /**/
-        
+
         .ol-overlay img {
             max-width: 90%;
         }
-        
+
         .data,
         .data p {
             margin: 0;
             text-align: center;
             font-size: 0.9em;
         }
-        
+
         .ol-legend>canvas {
             float: right;
         }
-        
+
         .ol-legend>div.ol-legend {
             position: relative;
         }
@@ -589,7 +603,7 @@
             width: 30%;
             top: 10%;
         }
-        
+
         .mydivmobile {
             /* position: absolute; */
             /* z-index: 9; */
@@ -602,7 +616,7 @@
             margin-right: 2%;
             /* top: 60%; */
         }
-        
+
         .mydiv1 {
             font-family: monospace;
             position: absolute;
@@ -616,7 +630,7 @@
             font-weight: bold;
             font-size: 15px;
         }
-        
+
         .mydivheader {
             padding: 10px;
             cursor: move;
@@ -626,7 +640,7 @@
             text-align: center;
             text-transform: uppercase;
         }
-        
+
         .mydivheadermobile {
             padding: 1px;
             cursor: move;
@@ -650,16 +664,18 @@
             #title {
                 font-size: 18px !important;
             }
+
             #title-grid {
                 margin: 1% 30%;
                 position: absolute;
                 top: 12px;
             }
+
             .logo-default {
                 display: none;
             }
         }
-        
+
         .myheader {
             position: absolute;
             background: green;
@@ -669,14 +685,15 @@
             z-index: 1;
             top: 0;
         }
-        
+
         .proTitle {
             font-size: 2em;
         }
     </style>
 </head>
 
-<body class="page-header-fixed sidemenu-closed-hidelogo page-content-white page-md header-white sidemenu-closed dark-sidebar-color logo-dark">
+<body
+    class="page-header-fixed sidemenu-closed-hidelogo page-content-white page-md header-white sidemenu-closed dark-sidebar-color logo-dark">
     <div class="page-wrapper">
         <div class="page-header navbar navbar-fixed-top" style="background-color: rgb(0, 150, 150);">
             <div class="page-header-inner">
@@ -688,14 +705,17 @@
                 <ul class="nav navbar-nav navbar-left in">
                     <li><a href="#" class="menu-toggler sidebar-toggler"><i class="icon-menu"></i></a></li>
                 </ul>
-                <a href="javascript:;" class="menu-toggler responsive-toggler" data-toggle="collapse" data-target=".navbar-collapse">
+                <a href="javascript:;" class="menu-toggler responsive-toggler" data-toggle="collapse"
+                    data-target=".navbar-collapse">
                     <span></span>
                 </a>
                 <div class="top-menu">
                     <ul class="nav navbar-nav pull-right">
                         <li class="dropdown dropdown-quick-sidebar-toggler">
-                            <img src="https://mahapocra.gov.in/assets/images/emblum.png" style=" float: right;height: 55px;width: 55px; ">
-                            <img src="https://mahapocra.gov.in/assets/images/logo.png" style=" float: right;height: 55px;width: 55px;">
+                            <img src="https://mahapocra.gov.in/assets/images/emblum.png"
+                                style=" float: right;height: 55px;width: 55px; ">
+                            <img src="https://mahapocra.gov.in/assets/images/logo.png"
+                                style=" float: right;height: 55px;width: 55px;">
                         </li>
                     </ul>
                 </div>
@@ -707,11 +727,14 @@
         <div class="page-container" style="background-color: rgb(0, 150, 150);">
             <!-- start sidebar menu -->
             <div class="sidebar-container">
-                <div class="sidemenu-container navbar-collapse collapse fixed-menu" style="background-color: rgb(0, 150, 150);">
+                <div class="sidemenu-container navbar-collapse collapse fixed-menu"
+                    style="background-color: rgb(0, 150, 150);">
                     <div id="remove-scroll" class="dbt_point" onload="show_sub()">
-                        <ul class="sidemenu  page-header-fixed sidemenu-closed" data-keep-expanded="false" data-auto-scroll="true" data-slide-speed="200" style="padding-top: 20px">
+                        <ul class="sidemenu  page-header-fixed sidemenu-closed" data-keep-expanded="false"
+                            data-auto-scroll="true" data-slide-speed="200" style="padding-top: 20px">
                             <li class="nav-item">
-                                <a href="http://gis.mahapocra.gov.in/dashboard_handover/" target="_blank" class="nav-link nav-toggle">
+                                <a href="http://gis.mahapocra.gov.in/dashboard_handover/" target="_blank"
+                                    class="nav-link nav-toggle">
                                     <i class="material-icons">ac_unit</i>
                                     <span class="title" style="color: white;">जीआयएस डॅशबोर्ड </span>
                                     <span class="arrow "></span>
@@ -760,9 +783,10 @@
                                 <form class="form-inline">
                                     <div class="form-group" style="padding-left: 1%;margin-top: 2%;">
                                         <!-- <label for="sel1">District:</label> -->
-                                        <select class="form-control" style="height: 0%;color: lightslategray;" id="district" onchange="getTaluka(this.value)">
-                      <option value="-1">--जिल्हा निवडा--</option>
-                    </select>
+                                        <select class="form-control" style="height: 0%;color: lightslategray;"
+                                            id="district" onchange="getTaluka(this.value)">
+                                            <option value="-1">--जिल्हा निवडा--</option>
+                                        </select>
                                     </div>
                                     <!-- <div class="form-group" style="padding-left: 1%;">
                     <label for="sel1"> Subdivision:</label>
@@ -772,19 +796,23 @@
                  </div> -->
                                     <div class="form-group" style="padding-left: 1%;margin-top: 2%;">
                                         <!-- <label for="sel1"> Taluka:</label> -->
-                                        <select class="form-control" style="height: 0%;color: lightslategray;" id="taluka" onchange="getVillage(this.value)">
-                      <option value="-1">--तालुका निवडा--</option>
-                    </select>
+                                        <select class="form-control" style="height: 0%;color: lightslategray;"
+                                            id="taluka" onchange="getVillage(this.value)">
+                                            <option value="-1">--तालुका निवडा--</option>
+                                        </select>
                                     </div>
                                     <div class="form-group" style="padding-left: 1%;margin-top: 2%;">
                                         <!-- <label for="sel1">Village:</label> -->
-                                        <select class="form-control" style="height: 0%;color: lightslategray;" id="village" onchange="getVillageData(this.value)">
-                      <option value="-1">--गाव निवडा--</option>
-                    </select>
+                                        <select class="form-control" style="height: 0%;color: lightslategray;"
+                                            id="village" onchange="getVillageData(this.value)">
+                                            <option value="-1">--गाव निवडा--</option>
+                                        </select>
                                     </div>
                                     <div class="form-group" style="padding-left: 2%;margin-top: 2%;">
                                         <!-- <label for="sel1"></label> -->
-                                        <button type="button" style="margin-left: 4%; font-size: 12px;" class="btn btn-primary" onclick="loadshcDetails();addCadastrallayer();">पहा</button>
+                                        <button type="button" style="margin-left: 4%; font-size: 12px;"
+                                            class="btn btn-primary"
+                                            onclick="loadshcDetails();addCadastrallayer();">पहा</button>
                                     </div>
                                 </form>
                             </div>
@@ -793,20 +821,23 @@
 
                             <div class="mydiv1" id="mydiv">
                                 <!-- Include a header DIV with the same name as the draggable DIV, followed by "header" -->
-                                <div class="mydivheader" id="mydivheader" style="font-family:Verdana;">मृदा आरोग्य पत्रिका</div>
+                                <div class="mydivheader" id="mydivheader" style="font-family:Verdana;">मृदा आरोग्य
+                                    पत्रिका</div>
                             </div>
 
                             <div id="mydivatt" class="mydiv" style="display: none;height: 400px;">
                                 <!--Include a header DIV with the same name as the draggable DIV, followed by "header":-->
                                 <div id="mydivattheader" class="mydivheader unselectable">
                                     <div>
-                                        <span id="atttitle" style="color: white;text-align: center;font-weight: bold;">मृदा आरोग्य पत्रिका शेतकऱ्यांची  यादी</span>
+                                        <span id="atttitle"
+                                            style="color: white;text-align: center;font-weight: bold;">मृदा आरोग्य
+                                            पत्रिका शेतकऱ्यांची यादी</span>
                                         <span id="tabevent" class="close" style="opacity: 0.9;">
-                      <!--<img src="/mahaURJA/resources/images/oc.png" onclick="ToggleDragable();" style="width: 15px;" />-->
-                      <img src="images/cancle.png" title="close window"
-                       onclick="closediv('mydivatt');opendiv('farmerbutton')"
-                       style="width: 15px;margin-left: 5px;opacity: 1;" />
-                    </span>
+                                            <!--<img src="/mahaURJA/resources/images/oc.png" onclick="ToggleDragable();" style="width: 15px;" />-->
+                                            <img src="images/cancle.png" title="close window"
+                                                onclick="closediv('mydivatt');opendiv('farmerbutton')"
+                                                style="width: 15px;margin-left: 5px;opacity: 1;" />
+                                        </span>
                                     </div>
                                 </div>
                                 <!--                <div  id="attcontainer" style="overflow: scroll;background-color: #ffffffe0;border: thin solid #2196f3;height: 500px;width: 270px;">-->
@@ -826,7 +857,8 @@
                                     <label style="color:white;padding-top: 1%;margin-left: 2%;">गाव :</label>
                                     <label style="color:white;padding-top: 1%;" id="villagelabel"> :</label>
                                 </div>
-                                <div style="background-color: transparent;overflow-x: auto;overflow-y: auto;width: 100%;height: 85%; font-size: 10px;margin-top: 1%;" id="ptTable">
+                                <div style="background-color: transparent;overflow-x: auto;overflow-y: auto;width: 100%;height: 85%; font-size: 10px;margin-top: 1%;"
+                                    id="ptTable">
                                 </div>
                                 <!------------------------------------------------------------>
 
@@ -843,17 +875,22 @@
                                 <!--Include a header DIV with the same name as the draggable DIV, followed by "header":-->
                                 <div id="mydivaheader" class="mydivheader unselectable ">
                                     <div>
-                                        <span id="atttitle" style="color: white;text-align: center;font-weight: bold;">मृदा आरोग्य पत्रिका</span>
+                                        <span id="atttitle"
+                                            style="color: white;text-align: center;font-weight: bold;">मृदा आरोग्य
+                                            पत्रिका</span>
                                         <span id="tabevent" class="close" style="opacity: 0.9;">
-                      <img class="close" src="images/cancle.png" title="close"
-                        onclick="closediv('mydiva');opendiv('mydivatt')"
-                        style="width: 15px;margin-left: 5px;opacity: 1;" />
-                    </span>
-                                        <img class="close" src="images/printer.png" id="create_pdf" title="print" onclick="printshc();closediv('mydiva');opendiv('mydivatt')" style="width: 15px;height: 15px;margin-left: 5px;opacity: 1;" />
+                                            <img class="close" src="images/cancle.png" title="close"
+                                                onclick="closediv('mydiva');opendiv('mydivatt')"
+                                                style="width: 15px;margin-left: 5px;opacity: 1;" />
+                                        </span>
+                                        <img class="close" src="images/printer.png" id="create_pdf" title="print"
+                                            onclick="printshc();closediv('mydiva');opendiv('mydivatt')"
+                                            style="width: 15px;height: 15px;margin-left: 5px;opacity: 1;" />
                                     </div>
                                 </div>
                                 <!--                <div  id="attcontainer" style="overflow: scroll;background-color: #ffffffe0;border: thin solid #2196f3;height: 500px;width: 270px;">-->
-                                <div style="height: 85%;overflow: auto;text-align: left;width: 100%;" id="shcfarmerdetails">
+                                <div style="height: 85%;overflow: auto;text-align: left;width: 100%;"
+                                    id="shcfarmerdetails">
                                     <!------------------------------------------------------------>
 
                                     <!------------------------------------------------------------>
@@ -862,7 +899,9 @@
                         </div>
 
                         <a class="locbutton" id="locbutton"><img src="images/loc.png"></a>
-                        <div id="wait" style="display:none;width:100px;height:100px;border:1px solid black;position:absolute;top:40%;left:50%;padding:2px;"><img src='images/loader.gif' width="80" height="80" /><br>Loading..</div>
+                        <div id="wait"
+                            style="display:none;width:100px;height:100px;border:1px solid black;position:absolute;top:40%;left:50%;padding:2px;">
+                            <img src='images/loader.gif' width="80" height="80" /><br>Loading..</div>
                         <div id="contentm" class="div-only-mobile" style="width:100%; height:60vh;overflow: auto;">
                             <div class="container formbox stack-top div-only-mobile " style="top:5%" id="containerm">
 
@@ -884,15 +923,16 @@
 
 
 
-                                        <select class="form-control" style="height: 0%;color: lightslategray;" id="districtm" onchange="getTalukam(this.value)">
+                                        <select class="form-control" style="height: 0%;color: lightslategray;"
+                                            id="districtm" onchange="getTalukam(this.value)">
 
 
 
-                      <option value="-1">--जिल्हा निवडा--</option>
+                                            <option value="-1">--जिल्हा निवडा--</option>
 
 
 
-                    </select>
+                                        </select>
 
 
 
@@ -932,15 +972,16 @@
 
 
 
-                                        <select class="form-control" style="height: 0%;color: lightslategray;" id="talukam" onchange="getVillagem(this.value)">
+                                        <select class="form-control" style="height: 0%;color: lightslategray;"
+                                            id="talukam" onchange="getVillagem(this.value)">
 
 
 
-                      <option value="-1">--तालुका निवडा--</option>
+                                            <option value="-1">--तालुका निवडा--</option>
 
 
 
-                    </select>
+                                        </select>
 
 
 
@@ -956,15 +997,16 @@
 
 
 
-                                        <select class="form-control" style="height: 0%;color: lightslategray;" id="villagem">
+                                        <select class="form-control" style="height: 0%;color: lightslategray;"
+                                            id="villagem">
 
 
 
-                      <option value="-1">--गाव निवडा--</option>
+                                            <option value="-1">--गाव निवडा--</option>
 
 
 
-                    </select>
+                                        </select>
 
 
 
@@ -980,7 +1022,9 @@
 
 
 
-                                        <button type="button" style="margin-left: 4%; font-size: 12px;" class="btn btn-primary" onclick="loadshcDetailsm();addCadastrallayerm();">पहा</button>
+                                        <button type="button" style="margin-left: 4%; font-size: 12px;"
+                                            class="btn btn-primary"
+                                            onclick="loadshcDetailsm();addCadastrallayerm();">पहा</button>
 
 
 
@@ -1028,7 +1072,8 @@
 
 
 
-                                <div class="mydivheader" id="mydivmoheader" style="font-family:Verdana;font-size: 10px;">मृदा आरोग्य पत्रिका</div>
+                                <div class="mydivheader" id="mydivmoheader"
+                                    style="font-family:Verdana;font-size: 10px;">मृदा आरोग्य पत्रिका</div>
 
 
 
@@ -1036,7 +1081,8 @@
 
 
 
-                            <div id="mydivattm" class="mydivmobile div-only-mobile" style="height: 300px;display: none;">
+                            <div id="mydivattm" class="mydivmobile div-only-mobile"
+                                style="height: 300px;display: none;">
 
 
 
@@ -1056,7 +1102,9 @@
 
 
 
-                                        <span id="atttitle" style="color: white;text-align: center;font-weight: bold;font-size: 12px;">मृदा आरोग्य पत्रिका शेतकऱ्यांची  यादी</span>
+                                        <span id="atttitle"
+                                            style="color: white;text-align: center;font-weight: bold;font-size: 12px;">मृदा
+                                            आरोग्य पत्रिका शेतकऱ्यांची यादी</span>
 
 
 
@@ -1064,19 +1112,17 @@
 
 
 
-                        <!--<img src="/mahaURJA/resources/images/oc.png" onclick="ToggleDragable();" style="width: 15px;" />-->
+                                            <!--<img src="/mahaURJA/resources/images/oc.png" onclick="ToggleDragable();" style="width: 15px;" />-->
 
 
 
-                        <img src="images/cancle.png" title="close window" onclick="closediv('mydivattm');"
+                                            <img src="images/cancle.png" title="close window"
+                                                onclick="closediv('mydivattm');"
+                                                style="width: 15px;height: 15px;margin-left: 5px;opacity: 1;" />
 
 
 
-                          style="width: 15px;height: 15px;margin-left: 5px;opacity: 1;" />
-
-
-
-                      </span>
+                                        </span>
 
 
 
@@ -1140,7 +1186,8 @@
 
 
 
-                                <div style="background-color: transparent;overflow-x: auto;overflow-y: auto;width: 100%;height: 85%; font-size: 10px;margin-top: 1%;" id="ptTablem">
+                                <div style="background-color: transparent;overflow-x: auto;overflow-y: auto;width: 100%;height: 85%; font-size: 10px;margin-top: 1%;"
+                                    id="ptTablem">
 
 
 
@@ -1216,7 +1263,9 @@
 
 
 
-                                        <span id="atttitle" style="color: white;text-align: center;font-weight: bold;">मृदा आरोग्य पत्रिका</span>
+                                        <span id="atttitle"
+                                            style="color: white;text-align: center;font-weight: bold;">मृदा आरोग्य
+                                            पत्रिका</span>
 
 
 
@@ -1228,23 +1277,19 @@
 
 
 
-                      <img class="close" src="images/cancle.png" title="close"
+                                            <img class="close" src="images/cancle.png" title="close"
+                                                onclick="closediv('mydivam');opendiv('mydivattm')"
+                                                style="width: 15px;height: 15px;margin-left: 2%;opacity: 1;" />
 
 
 
-                        onclick="closediv('mydivam');opendiv('mydivattm')"
+                                        </span>
 
 
 
-                        style="width: 15px;height: 15px;margin-left: 2%;opacity: 1;" />
-
-
-
-                    </span>
-
-
-
-                                        <img class="close" src="images/printer.png" id="create_pdf" title="print" onclick="printshcm();closediv('mydivam');opendiv('mydivattm')" style="width: 15px;height: 15px;margin-left: 2%;opacity: 1;" />
+                                        <img class="close" src="images/printer.png" id="create_pdf" title="print"
+                                            onclick="printshcm();closediv('mydivam');opendiv('mydivattm')"
+                                            style="width: 15px;height: 15px;margin-left: 2%;opacity: 1;" />
 
 
 
@@ -1264,7 +1309,8 @@
 
 
 
-                                <div style="height: 85%;overflow: auto;text-align: left;width: 100%;" id="shcfarmerdetailsm">
+                                <div style="height: 85%;overflow: auto;text-align: left;width: 100%;"
+                                    id="shcfarmerdetailsm">
 
 
 
@@ -1336,7 +1382,8 @@
 
 
 
-                            <a href="#quick_sidebar_tab_1" class="nav-link active tab-icon" data-toggle="tab"> <i class="icon-settings"></i>Tools
+                            <a href="#quick_sidebar_tab_1" class="nav-link active tab-icon" data-toggle="tab"> <i
+                                    class="icon-settings"></i>Tools
 
 
 
@@ -1380,7 +1427,8 @@
 
 
 
-                        <div class="tab-pane active chat-sidebar-chat in active show animated slideInRight" role="tabpanel" id="quick_sidebar_tab_1">
+                        <div class="tab-pane active chat-sidebar-chat in active show animated slideInRight"
+                            role="tabpanel" id="quick_sidebar_tab_1">
 
 
 
@@ -1388,7 +1436,8 @@
 
 
 
-                                <div class="chat-sidebar-chat-users slimscroll-style" data-rail-color="#ddd" data-wrapper-class="chat-sidebar-list">
+                                <div class="chat-sidebar-chat-users slimscroll-style" data-rail-color="#ddd"
+                                    data-wrapper-class="chat-sidebar-list">
 
 
 
@@ -1408,7 +1457,8 @@
 
 
 
-                                        <li class="media"><img class="media-object" src="images/buffer.png" width="35" height="35" alt="...">
+                                        <li class="media"><img class="media-object" src="images/buffer.png" width="35"
+                                                height="35" alt="...">
 
 
 
@@ -1444,7 +1494,8 @@
 
 
 
-                                            </div> <img class="media-object" src="images/meas.png" width="40" height="40" alt="...">
+                                            </div> <img class="media-object" src="images/meas.png" width="40"
+                                                height="40" alt="...">
 
 
 
@@ -1472,7 +1523,8 @@
 
 
 
-                                        <li class="media"><img class="media-object" src="images/bookmark.png" width="35" height="35" alt="...">
+                                        <li class="media"><img class="media-object" src="images/bookmark.png" width="35"
+                                                height="35" alt="...">
 
 
 
@@ -1508,7 +1560,8 @@
 
 
 
-                                            </div> <img class="media-object" src="images/identify.png" width="35" height="35" alt="...">
+                                            </div> <img class="media-object" src="images/identify.png" width="35"
+                                                height="35" alt="...">
 
 
 
@@ -1536,7 +1589,8 @@
 
 
 
-                                        <li class="media"><img class="media-object" src="images/Query.png" width="35" height="35" alt="...">
+                                        <li class="media"><img class="media-object" src="images/Query.png" width="35"
+                                                height="35" alt="...">
 
 
 
@@ -1552,7 +1606,8 @@
 
 
 
-                                                <div class="media-heading-sub"></div>position: absolute; z-index: 500; top: 12%; left: 1%;
+                                                <div class="media-heading-sub"></div>position: absolute; z-index: 500;
+                                                top: 12%; left: 1%;
 
 
 
@@ -1564,7 +1619,8 @@
 
 
 
-                                        <li class="media"><img class="media-object" src="images/draw.png" width="35" height="35" alt="...">
+                                        <li class="media"><img class="media-object" src="images/draw.png" width="35"
+                                                height="35" alt="...">
 
 
 
@@ -1777,7 +1833,7 @@
 
 
 
-            coll[i].addEventListener("click", function() {
+            coll[i].addEventListener("click", function () {
 
 
 
@@ -1938,7 +1994,8 @@
 
 
 
-    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/fixedheader/3.1.8/css/fixedHeader.bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css"
+        href="https://cdn.datatables.net/fixedheader/3.1.8/css/fixedHeader.bootstrap.min.css" />
 
 
 
